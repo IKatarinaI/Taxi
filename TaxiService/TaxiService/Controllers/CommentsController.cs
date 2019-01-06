@@ -8,28 +8,26 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
+using TaxiService.App_Start;
 using TaxiService.Models;
-using TaxiService.Persistance;
-using TaxiService.Persistance.Interface;
 
 namespace TaxiService.Controllers
 {
     public class CommentsController : ApiController
     {
-        private IUnitOfWork unitOfWork;
+        private Context db = new Context();
 
         // GET: api/Comments
         public IEnumerable<Comment> GetComments()
         {
-            return unitOfWork.CommentRepository.GetAll();
+            return db.Comments;
         }
 
         // GET: api/Comments/5
         [ResponseType(typeof(Comment))]
         public IHttpActionResult GetComment(int id)
         {
-            Comment comment = unitOfWork.CommentRepository.GetById(id);
-
+            Comment comment = db.Comments.Find(id);
             if (comment == null)
             {
                 return NotFound();
@@ -52,9 +50,11 @@ namespace TaxiService.Controllers
                 return BadRequest();
             }
 
+            db.Entry(comment).State = EntityState.Modified;
+
             try
             {
-                unitOfWork.CommentRepository.Update(comment);
+                db.SaveChanges();
             }
             catch (DbUpdateConcurrencyException)
             {
@@ -80,8 +80,8 @@ namespace TaxiService.Controllers
                 return BadRequest(ModelState);
             }
 
-            unitOfWork.CommentRepository.Add(comment);
-            unitOfWork.Commit();
+            db.Comments.Add(comment);
+            db.SaveChanges();
 
             return CreatedAtRoute("DefaultApi", new { id = comment.Id }, comment);
         }
@@ -90,15 +90,14 @@ namespace TaxiService.Controllers
         [ResponseType(typeof(Comment))]
         public IHttpActionResult DeleteComment(int id)
         {
-            Comment comment = unitOfWork.CommentRepository.GetById(id);
-
+            Comment comment = db.Comments.Find(id);
             if (comment == null)
             {
                 return NotFound();
             }
 
-            unitOfWork.CommentRepository.Remove(comment);
-            unitOfWork.Commit();
+            db.Comments.Remove(comment);
+            db.SaveChanges();
 
             return Ok(comment);
         }
@@ -107,21 +106,14 @@ namespace TaxiService.Controllers
         {
             if (disposing)
             {
-                unitOfWork.Dispose();
+                db.Dispose();
             }
             base.Dispose(disposing);
         }
 
         private bool CommentExists(int id)
         {
-            Comment comment = unitOfWork.CommentRepository.GetById(id);
-
-            if(comment!=null)
-            {
-                return true;
-            }
-
-            return false;
+            return db.Comments.Count(e => e.Id == id) > 0;
         }
     }
 }

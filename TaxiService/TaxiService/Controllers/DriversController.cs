@@ -1,29 +1,33 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
+using System.Linq;
 using System.Net;
+using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
+using TaxiService.App_Start;
 using TaxiService.Models;
-using TaxiService.Persistance.Interface;
 
 namespace TaxiService.Controllers
 {
     public class DriversController : ApiController
     {
-        private IUnitOfWork unitOfWork;
+        private Context db = new Context();
 
         // GET: api/Drivers
-        public IEnumerable<Driver> GetDrivers()
+        public IQueryable<Driver> GetDrivers()
         {
-            return unitOfWork.DriverRepository.GetAll();
+            return db.Drivers;
         }
 
         // GET: api/Drivers/5
         [ResponseType(typeof(Driver))]
         public IHttpActionResult GetDriver(int id)
         {
-            Driver driver = unitOfWork.DriverRepository.GetById(id);
-
+            Driver driver = db.Drivers.Find(id);
             if (driver == null)
             {
                 return NotFound();
@@ -46,9 +50,11 @@ namespace TaxiService.Controllers
                 return BadRequest();
             }
 
+            db.Entry(driver).State = EntityState.Modified;
+
             try
             {
-                unitOfWork.DriverRepository.Update(driver);
+                db.SaveChanges();
             }
             catch (DbUpdateConcurrencyException)
             {
@@ -74,8 +80,8 @@ namespace TaxiService.Controllers
                 return BadRequest(ModelState);
             }
 
-            unitOfWork.DriverRepository.Add(driver);
-            unitOfWork.Commit();
+            db.Drivers.Add(driver);
+            db.SaveChanges();
 
             return CreatedAtRoute("DefaultApi", new { id = driver.Id }, driver);
         }
@@ -84,15 +90,14 @@ namespace TaxiService.Controllers
         [ResponseType(typeof(Driver))]
         public IHttpActionResult DeleteDriver(int id)
         {
-            Driver driver = unitOfWork.DriverRepository.GetById(id);
-
+            Driver driver = db.Drivers.Find(id);
             if (driver == null)
             {
                 return NotFound();
             }
 
-            unitOfWork.DriverRepository.Remove(driver);
-            unitOfWork.Commit();
+            db.Drivers.Remove(driver);
+            db.SaveChanges();
 
             return Ok(driver);
         }
@@ -101,21 +106,14 @@ namespace TaxiService.Controllers
         {
             if (disposing)
             {
-                unitOfWork.Dispose();
+                db.Dispose();
             }
             base.Dispose(disposing);
         }
 
         private bool DriverExists(int id)
         {
-            Driver driver = unitOfWork.DriverRepository.GetById(id);
-
-            if(driver!=null)
-            {
-                return true;
-            }
-
-            return false;
+            return db.Drivers.Count(e => e.Id == id) > 0;
         }
     }
 }

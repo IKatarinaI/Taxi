@@ -1,30 +1,33 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
+using System.Linq;
 using System.Net;
+using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
+using TaxiService.App_Start;
 using TaxiService.Models;
-using TaxiService.Persistance.Interface;
 
 namespace TaxiService.Controllers
 {
     public class UsersController : ApiController
     {
-        private IUnitOfWork unitOfWork;
+        private Context db = new Context();
 
         // GET: api/Users
         public IEnumerable<User> GetUsers()
         {
-            return unitOfWork.UserRepository.GetAll();
+            return db.Users;
         }
 
         // GET: api/Users/5
         [ResponseType(typeof(User))]
         public IHttpActionResult GetUser(int id)
         {
-            User user = unitOfWork.UserRepository.GetById(id);
-
+            User user = db.Users.Find(id);
             if (user == null)
             {
                 return NotFound();
@@ -47,9 +50,11 @@ namespace TaxiService.Controllers
                 return BadRequest();
             }
 
+            db.Entry(user).State = EntityState.Modified;
+
             try
             {
-                unitOfWork.UserRepository.Update(user);
+                db.SaveChanges();
             }
             catch (DbUpdateConcurrencyException)
             {
@@ -75,7 +80,8 @@ namespace TaxiService.Controllers
                 return BadRequest(ModelState);
             }
 
-            unitOfWork.UserRepository.Add(user);
+            db.Users.Add(user);
+            db.SaveChanges();
 
             return CreatedAtRoute("DefaultApi", new { id = user.Id }, user);
         }
@@ -84,15 +90,14 @@ namespace TaxiService.Controllers
         [ResponseType(typeof(User))]
         public IHttpActionResult DeleteUser(int id)
         {
-            User user = unitOfWork.UserRepository.GetById(id);
-
+            User user = db.Users.Find(id);
             if (user == null)
             {
                 return NotFound();
             }
 
-            unitOfWork.UserRepository.Remove(user);
-            unitOfWork.Commit();
+            db.Users.Remove(user);
+            db.SaveChanges();
 
             return Ok(user);
         }
@@ -101,21 +106,14 @@ namespace TaxiService.Controllers
         {
             if (disposing)
             {
-                unitOfWork.Dispose();
+                db.Dispose();
             }
             base.Dispose(disposing);
         }
 
         private bool UserExists(int id)
         {
-            User user = unitOfWork.UserRepository.GetById(id);
-
-            if(user!=null)
-            {
-                return true;
-            }
-
-            return false;
+            return db.Users.Count(e => e.Id == id) > 0;
         }
     }
 }

@@ -14,7 +14,7 @@ namespace TaxiService.Models
         public int Id { get; set; }
 
         [Required]
-        public string Date { get; set; } 
+        public string Date { get; set; }
 
         [Required]
         public int CurrentLocationId { get; set; }
@@ -22,7 +22,7 @@ namespace TaxiService.Models
         [Required]
         public string Status { get; set; }
 
-        public string TypeOfCar { get; set; }   
+        public string TypeOfCar { get; set; }
 
         public int? CustomerId { get; set; }
 

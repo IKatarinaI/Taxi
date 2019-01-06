@@ -8,28 +8,26 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
+using TaxiService.App_Start;
 using TaxiService.Models;
-using TaxiService.Persistance;
-using TaxiService.Persistance.Interface;
 
 namespace TaxiService.Controllers
 {
     public class AddressesController : ApiController
     {
-        private IUnitOfWork unitOfWork;
+        private Context db = new Context();
 
         // GET: api/Addresses
         public IEnumerable<Address> GetAddresses()
         {
-            return unitOfWork.AddressRepository.GetAll();
+            return db.Addresses;
         }
 
         // GET: api/Addresses/5
         [ResponseType(typeof(Address))]
         public IHttpActionResult GetAddress(int id)
         {
-            Address address = unitOfWork.AddressRepository.GetById(id);
-
+            Address address = db.Addresses.Find(id);
             if (address == null)
             {
                 return NotFound();
@@ -52,9 +50,11 @@ namespace TaxiService.Controllers
                 return BadRequest();
             }
 
+            db.Entry(address).State = EntityState.Modified;
+
             try
             {
-                unitOfWork.AddressRepository.Update(address);
+                db.SaveChanges();
             }
             catch (DbUpdateConcurrencyException)
             {
@@ -80,8 +80,8 @@ namespace TaxiService.Controllers
                 return BadRequest(ModelState);
             }
 
-            unitOfWork.AddressRepository.Add(address);
-            unitOfWork.Commit();
+            db.Addresses.Add(address);
+            db.SaveChanges();
 
             return CreatedAtRoute("DefaultApi", new { id = address.Id }, address);
         }
@@ -90,15 +90,14 @@ namespace TaxiService.Controllers
         [ResponseType(typeof(Address))]
         public IHttpActionResult DeleteAddress(int id)
         {
-            Address address = unitOfWork.AddressRepository.GetById(id);
-
+            Address address = db.Addresses.Find(id);
             if (address == null)
             {
                 return NotFound();
             }
 
-            unitOfWork.AddressRepository.Remove(address);
-            unitOfWork.Commit();
+            db.Addresses.Remove(address);
+            db.SaveChanges();
 
             return Ok(address);
         }
@@ -107,21 +106,14 @@ namespace TaxiService.Controllers
         {
             if (disposing)
             {
-                unitOfWork.Dispose();
+                db.Dispose();
             }
             base.Dispose(disposing);
         }
 
         private bool AddressExists(int id)
         {
-            Address address = unitOfWork.AddressRepository.GetById(id);
-
-            if(address!=null)
-            {
-                return true;
-            }
-
-            return false;
+            return db.Addresses.Count(e => e.Id == id) > 0;
         }
     }
 }

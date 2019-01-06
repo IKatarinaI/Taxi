@@ -8,28 +8,26 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
+using TaxiService.App_Start;
 using TaxiService.Models;
-using TaxiService.Persistance;
-using TaxiService.Persistance.Interface;
 
 namespace TaxiService.Controllers
 {
     public class CarsController : ApiController
     {
-        private IUnitOfWork unitOfWork;
+        private Context db = new Context();
 
         // GET: api/Cars
         public IEnumerable<Car> GetCars()
         {
-            return unitOfWork.CarRepository.GetAll();
+            return db.Cars;
         }
 
         // GET: api/Cars/5
         [ResponseType(typeof(Car))]
         public IHttpActionResult GetCar(int id)
         {
-            Car car = unitOfWork.CarRepository.GetById(id);
-
+            Car car = db.Cars.Find(id);
             if (car == null)
             {
                 return NotFound();
@@ -52,9 +50,11 @@ namespace TaxiService.Controllers
                 return BadRequest();
             }
 
+            db.Entry(car).State = EntityState.Modified;
+
             try
             {
-                unitOfWork.CarRepository.Update(car);
+                db.SaveChanges();
             }
             catch (DbUpdateConcurrencyException)
             {
@@ -80,8 +80,8 @@ namespace TaxiService.Controllers
                 return BadRequest(ModelState);
             }
 
-            unitOfWork.CarRepository.Add(car);
-            unitOfWork.Commit();
+            db.Cars.Add(car);
+            db.SaveChanges();
 
             return CreatedAtRoute("DefaultApi", new { id = car.Id }, car);
         }
@@ -90,15 +90,14 @@ namespace TaxiService.Controllers
         [ResponseType(typeof(Car))]
         public IHttpActionResult DeleteCar(int id)
         {
-            Car car = unitOfWork.CarRepository.GetById(id);
-
+            Car car = db.Cars.Find(id);
             if (car == null)
             {
                 return NotFound();
             }
 
-            unitOfWork.CarRepository.Remove(car);
-            unitOfWork.Commit();
+            db.Cars.Remove(car);
+            db.SaveChanges();
 
             return Ok(car);
         }
@@ -107,21 +106,14 @@ namespace TaxiService.Controllers
         {
             if (disposing)
             {
-                unitOfWork.Dispose();
+                db.Dispose();
             }
             base.Dispose(disposing);
         }
 
         private bool CarExists(int id)
         {
-            Car car = unitOfWork.CarRepository.GetById(id);
-
-            if(car!=null)
-            {
-                return true;
-            }
-
-            return false;
+            return db.Cars.Count(e => e.Id == id) > 0;
         }
     }
 }

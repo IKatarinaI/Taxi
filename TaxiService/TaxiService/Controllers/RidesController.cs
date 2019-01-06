@@ -8,28 +8,26 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
+using TaxiService.App_Start;
 using TaxiService.Models;
-using TaxiService.Persistance;
-using TaxiService.Persistance.Interface;
 
 namespace TaxiService.Controllers
 {
     public class RidesController : ApiController
     {
-        private IUnitOfWork unitOfWork;
+        private Context db = new Context();
 
         // GET: api/Rides
-        public IEnumerable<Ride> GetRides()
+        public IQueryable<Ride> GetRides()
         {
-            return unitOfWork.RideRepository.GetAll();
+            return db.Rides;
         }
 
         // GET: api/Rides/5
         [ResponseType(typeof(Ride))]
         public IHttpActionResult GetRide(int id)
         {
-            Ride ride = unitOfWork.RideRepository.GetById(id);
-
+            Ride ride = db.Rides.Find(id);
             if (ride == null)
             {
                 return NotFound();
@@ -52,9 +50,11 @@ namespace TaxiService.Controllers
                 return BadRequest();
             }
 
+            db.Entry(ride).State = EntityState.Modified;
+
             try
             {
-                unitOfWork.RideRepository.Update(ride);
+                db.SaveChanges();
             }
             catch (DbUpdateConcurrencyException)
             {
@@ -80,8 +80,8 @@ namespace TaxiService.Controllers
                 return BadRequest(ModelState);
             }
 
-            unitOfWork.RideRepository.Add(ride);
-            unitOfWork.Commit();
+            db.Rides.Add(ride);
+            db.SaveChanges();
 
             return CreatedAtRoute("DefaultApi", new { id = ride.Id }, ride);
         }
@@ -90,15 +90,14 @@ namespace TaxiService.Controllers
         [ResponseType(typeof(Ride))]
         public IHttpActionResult DeleteRide(int id)
         {
-            Ride ride = unitOfWork.RideRepository.GetById(id);
-
+            Ride ride = db.Rides.Find(id);
             if (ride == null)
             {
                 return NotFound();
             }
 
-            unitOfWork.RideRepository.Remove(ride);
-            unitOfWork.Commit();
+            db.Rides.Remove(ride);
+            db.SaveChanges();
 
             return Ok(ride);
         }
@@ -107,21 +106,14 @@ namespace TaxiService.Controllers
         {
             if (disposing)
             {
-                unitOfWork.Dispose();
+                db.Dispose();
             }
             base.Dispose(disposing);
         }
 
         private bool RideExists(int id)
         {
-            Ride ride = unitOfWork.RideRepository.GetById(id);
-
-            if(ride!=null)
-            {
-                return true;
-            }
-
-            return false;
+            return db.Rides.Count(e => e.Id == id) > 0;
         }
     }
 }

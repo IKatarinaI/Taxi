@@ -21,6 +21,6 @@ namespace TaxiService.Models
 
         public string CarNumber { get; set; }
 
-        public string TypeOfCar { get; set; } 
+        public string TypeOfCar { get; set; }
     }
 }

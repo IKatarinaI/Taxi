@@ -15,12 +15,12 @@ namespace TaxiService.Models
 
         public string Content { get; set; }
 
-        public string Date { get; set; } 
+        public string Date { get; set; }
 
         public int UserId { get; set; }
 
         public int RideId { get; set; }
 
-        public string Grade { get; set; }      
+        public string Grade { get; set; }
     }
 }

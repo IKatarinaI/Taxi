@@ -8,28 +8,26 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
+using TaxiService.App_Start;
 using TaxiService.Models;
-using TaxiService.Persistance;
-using TaxiService.Persistance.Interface;
 
 namespace TaxiService.Controllers
 {
     public class LocationsController : ApiController
     {
-        private IUnitOfWork unitOfWork;
+        private Context db = new Context();
 
         // GET: api/Locations
-        public IEnumerable<Location> GetLocations()
+        public IQueryable<Location> GetLocations()
         {
-            return unitOfWork.LocationRepository.GetAll();
+            return db.Locations;
         }
 
         // GET: api/Locations/5
         [ResponseType(typeof(Location))]
         public IHttpActionResult GetLocation(int id)
         {
-            Location location = unitOfWork.LocationRepository.GetById(id);
-
+            Location location = db.Locations.Find(id);
             if (location == null)
             {
                 return NotFound();
@@ -52,9 +50,11 @@ namespace TaxiService.Controllers
                 return BadRequest();
             }
 
+            db.Entry(location).State = EntityState.Modified;
+
             try
             {
-                unitOfWork.LocationRepository.Update(location);
+                db.SaveChanges();
             }
             catch (DbUpdateConcurrencyException)
             {
@@ -80,8 +80,8 @@ namespace TaxiService.Controllers
                 return BadRequest(ModelState);
             }
 
-            unitOfWork.LocationRepository.Add(location);
-            unitOfWork.Commit();
+            db.Locations.Add(location);
+            db.SaveChanges();
 
             return CreatedAtRoute("DefaultApi", new { id = location.Id }, location);
         }
@@ -90,15 +90,14 @@ namespace TaxiService.Controllers
         [ResponseType(typeof(Location))]
         public IHttpActionResult DeleteLocation(int id)
         {
-            Location location = unitOfWork.LocationRepository.GetById(id);
-
+            Location location = db.Locations.Find(id);
             if (location == null)
             {
                 return NotFound();
             }
 
-            unitOfWork.LocationRepository.Remove(location);
-            unitOfWork.Commit();
+            db.Locations.Remove(location);
+            db.SaveChanges();
 
             return Ok(location);
         }
@@ -107,21 +106,14 @@ namespace TaxiService.Controllers
         {
             if (disposing)
             {
-                unitOfWork.Dispose();
+                db.Dispose();
             }
             base.Dispose(disposing);
         }
 
         private bool LocationExists(int id)
         {
-            Location location = unitOfWork.LocationRepository.GetById(id);
-
-            if(location!=null)
-            {
-                return true;
-            }
-
-            return false;
+            return db.Locations.Count(e => e.Id == id) > 0;
         }
     }
 }

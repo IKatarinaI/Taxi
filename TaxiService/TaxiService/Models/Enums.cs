@@ -23,13 +23,13 @@ namespace TaxiService.Models
 
     public enum STATUS
     {
-        CREATED,  //Musterija je kreirala voznju, bez vozaca - nema komentara
-        FORMED, //Dispecer je formirao voznju, bez vozaca - nema komentara
-        PROCESSED, //Dispecer je dodelio vozaca voznji - nema komentara
-        ACCEPTED,//Vozac je preuzeo voznju - nema komentara
-        CANCELED,  //Musterija je kreirala voznju, pa otkazala - Musterija obavezno pravi komentar
-        FAILED, //Vozac zadaje da je voznja neuspesna - Vozac obavezno kreira komentar
-        SUCCEEDED    //Vozac zadaje da je voznja uspesna - Musterija opciono kreira komentar
+        CREATED,    //Musterija je kreirala voznju, bez vozaca - nema komentara
+        FORMED,     //Dispecer je formirao voznju, bez vozaca - nema komentara
+        PROCESSED,  //Dispecer je dodelio vozaca voznji - nema komentara
+        ACCEPTED,   //Vozac je preuzeo voznju - nema komentara
+        CANCELED,   //Musterija je kreirala voznju, pa otkazala - Musterija obavezno pravi komentar
+        FAILED,     //Vozac zadaje da je voznja neuspesna - Vozac obavezno kreira komentar
+        SUCCEEDED   //Vozac zadaje da je voznja uspesna - Musterija opciono kreira komentar
     }
 
     public enum CARTYPES
@@ -40,7 +40,7 @@ namespace TaxiService.Models
 
     public enum ROLE
     {
-        CUSOMER,
+        CUSTOMER,
         ADMIN,
         DRIVER
     }
