@@ -1,0 +1,24 @@
+﻿@model WebAPI.Models.Voznja
+@{
+    ViewBag.Title = "DispecerZatrazioVoznju";
+}
+
+<html>
+<body style="background-color:limegreen">
+    <div style="text-align:center">
+        <h1>Uspešno ste zatražili vožnju na adresu: @Model.LokacijaNaKojuTaksiDolazi.Adresa.Ulica @Model.LokacijaNaKojuTaksiDolazi.Adresa.Broj, @Model.LokacijaNaKojuTaksiDolazi.Adresa.Mesto @Model.LokacijaNaKojuTaksiDolazi.Adresa.PostanskiBroj </h1>
+        @if (Model.Musterija.Korisnicko_ime != "")
+        {
+            <form action="/Projekat/VratiProfilMusterija">
+                <input type="submit" value="Vrati se na profil" />
+            </form>
+        }
+        else
+        {
+            <form action="/Projekat/VratiProfilDisp">
+                <input type="submit" value="Vrati se na profil" />
+            </form>
+        }
+    </div>
+</body>
+</html>
