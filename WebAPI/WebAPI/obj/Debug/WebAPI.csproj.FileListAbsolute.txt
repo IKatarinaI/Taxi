@@ -1,0 +1,142 @@
+C:\Users\HP\Desktop\Projakat\WP1718-PR101-2015\WebAPI_AJAX\WebAPI\WebAPI\obj\Debug\WebAPI.csprojResolveAssemblyReference.cache
+C:\Users\HP\Desktop\Projakat\WP1718-PR101-2015\WebAPI_AJAX\WebAPI\WebAPI\bin\roslyn\csc.exe
+C:\Users\HP\Desktop\Projakat\WP1718-PR101-2015\WebAPI_AJAX\WebAPI\WebAPI\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\HP\Desktop\Projakat\WP1718-PR101-2015\WebAPI_AJAX\WebAPI\WebAPI\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\HP\Desktop\Projakat\WP1718-PR101-2015\WebAPI_AJAX\WebAPI\WebAPI\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\HP\Desktop\Projakat\WP1718-PR101-2015\WebAPI_AJAX\WebAPI\WebAPI\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\HP\Desktop\Projakat\WP1718-PR101-2015\WebAPI_AJAX\WebAPI\WebAPI\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\HP\Desktop\Projakat\WP1718-PR101-2015\WebAPI_AJAX\WebAPI\WebAPI\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\HP\Desktop\Projakat\WP1718-PR101-2015\WebAPI_AJAX\WebAPI\WebAPI\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\HP\Desktop\Projakat\WP1718-PR101-2015\WebAPI_AJAX\WebAPI\WebAPI\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\HP\Desktop\Projakat\WP1718-PR101-2015\WebAPI_AJAX\WebAPI\WebAPI\bin\roslyn\vbc.exe
+C:\Users\HP\Desktop\Projakat\WP1718-PR101-2015\WebAPI_AJAX\WebAPI\WebAPI\bin\roslyn\VBCSCompiler.exe
+C:\Users\HP\Desktop\Projakat\WP1718-PR101-2015\WebAPI_AJAX\WebAPI\WebAPI\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\HP\Desktop\Projakat\WP1718-PR101-2015\WebAPI_AJAX\WebAPI\WebAPI\bin\WebAPI.dll.config
+C:\Users\HP\Desktop\Projakat\WP1718-PR101-2015\WebAPI_AJAX\WebAPI\WebAPI\bin\WebAPI.dll
+C:\Users\HP\Desktop\Projakat\WP1718-PR101-2015\WebAPI_AJAX\WebAPI\WebAPI\bin\WebAPI.pdb
+C:\Users\HP\Desktop\Projakat\WP1718-PR101-2015\WebAPI_AJAX\WebAPI\WebAPI\bin\Antlr3.Runtime.dll
+C:\Users\HP\Desktop\Projakat\WP1718-PR101-2015\WebAPI_AJAX\WebAPI\WebAPI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\HP\Desktop\Projakat\WP1718-PR101-2015\WebAPI_AJAX\WebAPI\WebAPI\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\HP\Desktop\Projakat\WP1718-PR101-2015\WebAPI_AJAX\WebAPI\WebAPI\bin\Newtonsoft.Json.dll
+C:\Users\HP\Desktop\Projakat\WP1718-PR101-2015\WebAPI_AJAX\WebAPI\WebAPI\bin\System.Net.Http.Formatting.dll
+C:\Users\HP\Desktop\Projakat\WP1718-PR101-2015\WebAPI_AJAX\WebAPI\WebAPI\bin\System.Web.Helpers.dll
+C:\Users\HP\Desktop\Projakat\WP1718-PR101-2015\WebAPI_AJAX\WebAPI\WebAPI\bin\System.Web.Http.dll
+C:\Users\HP\Desktop\Projakat\WP1718-PR101-2015\WebAPI_AJAX\WebAPI\WebAPI\bin\System.Web.Http.WebHost.dll
+C:\Users\HP\Desktop\Projakat\WP1718-PR101-2015\WebAPI_AJAX\WebAPI\WebAPI\bin\System.Web.Mvc.dll
+C:\Users\HP\Desktop\Projakat\WP1718-PR101-2015\WebAPI_AJAX\WebAPI\WebAPI\bin\System.Web.Optimization.dll
+C:\Users\HP\Desktop\Projakat\WP1718-PR101-2015\WebAPI_AJAX\WebAPI\WebAPI\bin\System.Web.Razor.dll
+C:\Users\HP\Desktop\Projakat\WP1718-PR101-2015\WebAPI_AJAX\WebAPI\WebAPI\bin\System.Web.WebPages.Deployment.dll
+C:\Users\HP\Desktop\Projakat\WP1718-PR101-2015\WebAPI_AJAX\WebAPI\WebAPI\bin\System.Web.WebPages.dll
+C:\Users\HP\Desktop\Projakat\WP1718-PR101-2015\WebAPI_AJAX\WebAPI\WebAPI\bin\System.Web.WebPages.Razor.dll
+C:\Users\HP\Desktop\Projakat\WP1718-PR101-2015\WebAPI_AJAX\WebAPI\WebAPI\bin\WebGrease.dll
+C:\Users\HP\Desktop\Projakat\WP1718-PR101-2015\WebAPI_AJAX\WebAPI\WebAPI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\HP\Desktop\Projakat\WP1718-PR101-2015\WebAPI_AJAX\WebAPI\WebAPI\bin\Newtonsoft.Json.xml
+C:\Users\HP\Desktop\Projakat\WP1718-PR101-2015\WebAPI_AJAX\WebAPI\WebAPI\bin\System.Net.Http.Formatting.xml
+C:\Users\HP\Desktop\Projakat\WP1718-PR101-2015\WebAPI_AJAX\WebAPI\WebAPI\bin\System.Web.Helpers.xml
+C:\Users\HP\Desktop\Projakat\WP1718-PR101-2015\WebAPI_AJAX\WebAPI\WebAPI\bin\System.Web.Http.xml
+C:\Users\HP\Desktop\Projakat\WP1718-PR101-2015\WebAPI_AJAX\WebAPI\WebAPI\bin\System.Web.Http.WebHost.xml
+C:\Users\HP\Desktop\Projakat\WP1718-PR101-2015\WebAPI_AJAX\WebAPI\WebAPI\bin\System.Web.Mvc.xml
+C:\Users\HP\Desktop\Projakat\WP1718-PR101-2015\WebAPI_AJAX\WebAPI\WebAPI\bin\System.Web.Optimization.xml
+C:\Users\HP\Desktop\Projakat\WP1718-PR101-2015\WebAPI_AJAX\WebAPI\WebAPI\bin\System.Web.Razor.xml
+C:\Users\HP\Desktop\Projakat\WP1718-PR101-2015\WebAPI_AJAX\WebAPI\WebAPI\bin\System.Web.WebPages.xml
+C:\Users\HP\Desktop\Projakat\WP1718-PR101-2015\WebAPI_AJAX\WebAPI\WebAPI\bin\System.Web.WebPages.Deployment.xml
+C:\Users\HP\Desktop\Projakat\WP1718-PR101-2015\WebAPI_AJAX\WebAPI\WebAPI\bin\System.Web.WebPages.Razor.xml
+C:\Users\HP\Desktop\Projakat\WP1718-PR101-2015\WebAPI_AJAX\WebAPI\WebAPI\bin\Antlr3.Runtime.pdb
+C:\Users\HP\Desktop\Projakat\WP1718-PR101-2015\WebAPI_AJAX\WebAPI\WebAPI\obj\Debug\WebAPI.dll
+C:\Users\HP\Desktop\Projakat\WP1718-PR101-2015\WebAPI_AJAX\WebAPI\WebAPI\obj\Debug\WebAPI.pdb
+H:\WP1718-PR101-2015-master (1)\WP1718-PR101-2015-master\WebAPI_AJAX\WebAPI\WebAPI\bin\roslyn\csc.exe
+H:\WP1718-PR101-2015-master (1)\WP1718-PR101-2015-master\WebAPI_AJAX\WebAPI\WebAPI\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+H:\WP1718-PR101-2015-master (1)\WP1718-PR101-2015-master\WebAPI_AJAX\WebAPI\WebAPI\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+H:\WP1718-PR101-2015-master (1)\WP1718-PR101-2015-master\WebAPI_AJAX\WebAPI\WebAPI\bin\roslyn\Microsoft.CodeAnalysis.dll
+H:\WP1718-PR101-2015-master (1)\WP1718-PR101-2015-master\WebAPI_AJAX\WebAPI\WebAPI\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+H:\WP1718-PR101-2015-master (1)\WP1718-PR101-2015-master\WebAPI_AJAX\WebAPI\WebAPI\bin\roslyn\Microsoft.CSharp.Core.targets
+H:\WP1718-PR101-2015-master (1)\WP1718-PR101-2015-master\WebAPI_AJAX\WebAPI\WebAPI\bin\roslyn\Microsoft.VisualBasic.Core.targets
+H:\WP1718-PR101-2015-master (1)\WP1718-PR101-2015-master\WebAPI_AJAX\WebAPI\WebAPI\bin\roslyn\System.Collections.Immutable.dll
+H:\WP1718-PR101-2015-master (1)\WP1718-PR101-2015-master\WebAPI_AJAX\WebAPI\WebAPI\bin\roslyn\System.Reflection.Metadata.dll
+H:\WP1718-PR101-2015-master (1)\WP1718-PR101-2015-master\WebAPI_AJAX\WebAPI\WebAPI\bin\roslyn\vbc.exe
+H:\WP1718-PR101-2015-master (1)\WP1718-PR101-2015-master\WebAPI_AJAX\WebAPI\WebAPI\bin\roslyn\VBCSCompiler.exe
+H:\WP1718-PR101-2015-master (1)\WP1718-PR101-2015-master\WebAPI_AJAX\WebAPI\WebAPI\bin\roslyn\VBCSCompiler.exe.config
+H:\WP1718-PR101-2015-master (1)\WP1718-PR101-2015-master\WebAPI_AJAX\WebAPI\WebAPI\bin\WebAPI.dll.config
+H:\WP1718-PR101-2015-master (1)\WP1718-PR101-2015-master\WebAPI_AJAX\WebAPI\WebAPI\bin\WebAPI.dll
+H:\WP1718-PR101-2015-master (1)\WP1718-PR101-2015-master\WebAPI_AJAX\WebAPI\WebAPI\bin\WebAPI.pdb
+H:\WP1718-PR101-2015-master (1)\WP1718-PR101-2015-master\WebAPI_AJAX\WebAPI\WebAPI\bin\Antlr3.Runtime.dll
+H:\WP1718-PR101-2015-master (1)\WP1718-PR101-2015-master\WebAPI_AJAX\WebAPI\WebAPI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+H:\WP1718-PR101-2015-master (1)\WP1718-PR101-2015-master\WebAPI_AJAX\WebAPI\WebAPI\bin\Microsoft.Web.Infrastructure.dll
+H:\WP1718-PR101-2015-master (1)\WP1718-PR101-2015-master\WebAPI_AJAX\WebAPI\WebAPI\bin\Newtonsoft.Json.dll
+H:\WP1718-PR101-2015-master (1)\WP1718-PR101-2015-master\WebAPI_AJAX\WebAPI\WebAPI\bin\System.Net.Http.Formatting.dll
+H:\WP1718-PR101-2015-master (1)\WP1718-PR101-2015-master\WebAPI_AJAX\WebAPI\WebAPI\bin\System.Web.Helpers.dll
+H:\WP1718-PR101-2015-master (1)\WP1718-PR101-2015-master\WebAPI_AJAX\WebAPI\WebAPI\bin\System.Web.Http.dll
+H:\WP1718-PR101-2015-master (1)\WP1718-PR101-2015-master\WebAPI_AJAX\WebAPI\WebAPI\bin\System.Web.Http.WebHost.dll
+H:\WP1718-PR101-2015-master (1)\WP1718-PR101-2015-master\WebAPI_AJAX\WebAPI\WebAPI\bin\System.Web.Mvc.dll
+H:\WP1718-PR101-2015-master (1)\WP1718-PR101-2015-master\WebAPI_AJAX\WebAPI\WebAPI\bin\System.Web.Optimization.dll
+H:\WP1718-PR101-2015-master (1)\WP1718-PR101-2015-master\WebAPI_AJAX\WebAPI\WebAPI\bin\System.Web.Razor.dll
+H:\WP1718-PR101-2015-master (1)\WP1718-PR101-2015-master\WebAPI_AJAX\WebAPI\WebAPI\bin\System.Web.WebPages.Deployment.dll
+H:\WP1718-PR101-2015-master (1)\WP1718-PR101-2015-master\WebAPI_AJAX\WebAPI\WebAPI\bin\System.Web.WebPages.dll
+H:\WP1718-PR101-2015-master (1)\WP1718-PR101-2015-master\WebAPI_AJAX\WebAPI\WebAPI\bin\System.Web.WebPages.Razor.dll
+H:\WP1718-PR101-2015-master (1)\WP1718-PR101-2015-master\WebAPI_AJAX\WebAPI\WebAPI\bin\WebGrease.dll
+H:\WP1718-PR101-2015-master (1)\WP1718-PR101-2015-master\WebAPI_AJAX\WebAPI\WebAPI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+H:\WP1718-PR101-2015-master (1)\WP1718-PR101-2015-master\WebAPI_AJAX\WebAPI\WebAPI\bin\Newtonsoft.Json.xml
+H:\WP1718-PR101-2015-master (1)\WP1718-PR101-2015-master\WebAPI_AJAX\WebAPI\WebAPI\bin\System.Net.Http.Formatting.xml
+H:\WP1718-PR101-2015-master (1)\WP1718-PR101-2015-master\WebAPI_AJAX\WebAPI\WebAPI\bin\System.Web.Helpers.xml
+H:\WP1718-PR101-2015-master (1)\WP1718-PR101-2015-master\WebAPI_AJAX\WebAPI\WebAPI\bin\System.Web.Http.xml
+H:\WP1718-PR101-2015-master (1)\WP1718-PR101-2015-master\WebAPI_AJAX\WebAPI\WebAPI\bin\System.Web.Http.WebHost.xml
+H:\WP1718-PR101-2015-master (1)\WP1718-PR101-2015-master\WebAPI_AJAX\WebAPI\WebAPI\bin\System.Web.Mvc.xml
+H:\WP1718-PR101-2015-master (1)\WP1718-PR101-2015-master\WebAPI_AJAX\WebAPI\WebAPI\bin\System.Web.Optimization.xml
+H:\WP1718-PR101-2015-master (1)\WP1718-PR101-2015-master\WebAPI_AJAX\WebAPI\WebAPI\bin\System.Web.Razor.xml
+H:\WP1718-PR101-2015-master (1)\WP1718-PR101-2015-master\WebAPI_AJAX\WebAPI\WebAPI\bin\System.Web.WebPages.xml
+H:\WP1718-PR101-2015-master (1)\WP1718-PR101-2015-master\WebAPI_AJAX\WebAPI\WebAPI\bin\System.Web.WebPages.Deployment.xml
+H:\WP1718-PR101-2015-master (1)\WP1718-PR101-2015-master\WebAPI_AJAX\WebAPI\WebAPI\bin\System.Web.WebPages.Razor.xml
+H:\WP1718-PR101-2015-master (1)\WP1718-PR101-2015-master\WebAPI_AJAX\WebAPI\WebAPI\bin\Antlr3.Runtime.pdb
+H:\WP1718-PR101-2015-master (1)\WP1718-PR101-2015-master\WebAPI_AJAX\WebAPI\WebAPI\obj\Debug\WebAPI.csprojAssemblyReference.cache
+H:\WP1718-PR101-2015-master (1)\WP1718-PR101-2015-master\WebAPI_AJAX\WebAPI\WebAPI\obj\Debug\WebAPI.csproj.CoreCompileInputs.cache
+H:\WP1718-PR101-2015-master (1)\WP1718-PR101-2015-master\WebAPI_AJAX\WebAPI\WebAPI\obj\Debug\WebAPI.csproj.CopyComplete
+H:\WP1718-PR101-2015-master (1)\WP1718-PR101-2015-master\WebAPI_AJAX\WebAPI\WebAPI\obj\Debug\WebAPI.dll
+H:\WP1718-PR101-2015-master (1)\WP1718-PR101-2015-master\WebAPI_AJAX\WebAPI\WebAPI\obj\Debug\WebAPI.pdb
+C:\Users\Katarina\Desktop\Taxi\Taxi\WebAPI\WebAPI\bin\roslyn\csc.exe
+C:\Users\Katarina\Desktop\Taxi\Taxi\WebAPI\WebAPI\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Katarina\Desktop\Taxi\Taxi\WebAPI\WebAPI\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Katarina\Desktop\Taxi\Taxi\WebAPI\WebAPI\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Katarina\Desktop\Taxi\Taxi\WebAPI\WebAPI\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Katarina\Desktop\Taxi\Taxi\WebAPI\WebAPI\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Katarina\Desktop\Taxi\Taxi\WebAPI\WebAPI\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Katarina\Desktop\Taxi\Taxi\WebAPI\WebAPI\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Katarina\Desktop\Taxi\Taxi\WebAPI\WebAPI\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Katarina\Desktop\Taxi\Taxi\WebAPI\WebAPI\bin\roslyn\vbc.exe
+C:\Users\Katarina\Desktop\Taxi\Taxi\WebAPI\WebAPI\bin\roslyn\VBCSCompiler.exe
+C:\Users\Katarina\Desktop\Taxi\Taxi\WebAPI\WebAPI\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Katarina\Desktop\Taxi\Taxi\WebAPI\WebAPI\bin\WebAPI.dll.config
+C:\Users\Katarina\Desktop\Taxi\Taxi\WebAPI\WebAPI\bin\WebAPI.dll
+C:\Users\Katarina\Desktop\Taxi\Taxi\WebAPI\WebAPI\bin\WebAPI.pdb
+C:\Users\Katarina\Desktop\Taxi\Taxi\WebAPI\WebAPI\bin\Antlr3.Runtime.dll
+C:\Users\Katarina\Desktop\Taxi\Taxi\WebAPI\WebAPI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Katarina\Desktop\Taxi\Taxi\WebAPI\WebAPI\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Katarina\Desktop\Taxi\Taxi\WebAPI\WebAPI\bin\Newtonsoft.Json.dll
+C:\Users\Katarina\Desktop\Taxi\Taxi\WebAPI\WebAPI\bin\System.Net.Http.Formatting.dll
+C:\Users\Katarina\Desktop\Taxi\Taxi\WebAPI\WebAPI\bin\System.Web.Helpers.dll
+C:\Users\Katarina\Desktop\Taxi\Taxi\WebAPI\WebAPI\bin\System.Web.Http.dll
+C:\Users\Katarina\Desktop\Taxi\Taxi\WebAPI\WebAPI\bin\System.Web.Http.WebHost.dll
+C:\Users\Katarina\Desktop\Taxi\Taxi\WebAPI\WebAPI\bin\System.Web.Mvc.dll
+C:\Users\Katarina\Desktop\Taxi\Taxi\WebAPI\WebAPI\bin\System.Web.Optimization.dll
+C:\Users\Katarina\Desktop\Taxi\Taxi\WebAPI\WebAPI\bin\System.Web.Razor.dll
+C:\Users\Katarina\Desktop\Taxi\Taxi\WebAPI\WebAPI\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Katarina\Desktop\Taxi\Taxi\WebAPI\WebAPI\bin\System.Web.WebPages.dll
+C:\Users\Katarina\Desktop\Taxi\Taxi\WebAPI\WebAPI\bin\System.Web.WebPages.Razor.dll
+C:\Users\Katarina\Desktop\Taxi\Taxi\WebAPI\WebAPI\bin\WebGrease.dll
+C:\Users\Katarina\Desktop\Taxi\Taxi\WebAPI\WebAPI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Katarina\Desktop\Taxi\Taxi\WebAPI\WebAPI\bin\Newtonsoft.Json.xml
+C:\Users\Katarina\Desktop\Taxi\Taxi\WebAPI\WebAPI\bin\System.Net.Http.Formatting.xml
+C:\Users\Katarina\Desktop\Taxi\Taxi\WebAPI\WebAPI\bin\System.Web.Helpers.xml
+C:\Users\Katarina\Desktop\Taxi\Taxi\WebAPI\WebAPI\bin\System.Web.Http.xml
+C:\Users\Katarina\Desktop\Taxi\Taxi\WebAPI\WebAPI\bin\System.Web.Http.WebHost.xml
+C:\Users\Katarina\Desktop\Taxi\Taxi\WebAPI\WebAPI\bin\System.Web.Mvc.xml
+C:\Users\Katarina\Desktop\Taxi\Taxi\WebAPI\WebAPI\bin\System.Web.Optimization.xml
+C:\Users\Katarina\Desktop\Taxi\Taxi\WebAPI\WebAPI\bin\System.Web.Razor.xml
+C:\Users\Katarina\Desktop\Taxi\Taxi\WebAPI\WebAPI\bin\System.Web.WebPages.xml
+C:\Users\Katarina\Desktop\Taxi\Taxi\WebAPI\WebAPI\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Katarina\Desktop\Taxi\Taxi\WebAPI\WebAPI\bin\System.Web.WebPages.Razor.xml
+C:\Users\Katarina\Desktop\Taxi\Taxi\WebAPI\WebAPI\bin\Antlr3.Runtime.pdb
+C:\Users\Katarina\Desktop\Taxi\Taxi\WebAPI\WebAPI\obj\Debug\WebAPI.csprojAssemblyReference.cache
+C:\Users\Katarina\Desktop\Taxi\Taxi\WebAPI\WebAPI\obj\Debug\WebAPI.csproj.CoreCompileInputs.cache
+C:\Users\Katarina\Desktop\Taxi\Taxi\WebAPI\WebAPI\obj\Debug\WebAPI.csproj.CopyComplete
+C:\Users\Katarina\Desktop\Taxi\Taxi\WebAPI\WebAPI\obj\Debug\WebAPI.dll
+C:\Users\Katarina\Desktop\Taxi\Taxi\WebAPI\WebAPI\obj\Debug\WebAPI.pdb
