@@ -3,55 +3,66 @@
     ViewBag.Title = "ZatraziVoznjuMusterija";
 }
 
-<h2>ZatraziVoznjuMusterija</h2>
-
 <html>
-<body style="background-color:limegreen">
-    <div style="text-align:center">
-        <h2><b>Zahtev za vožnju</b></h2>
+<head>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</head>
+<body style="width:auto; height:auto; background-image:url('../taxi-service.png'); background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;">
+    <div style="text-align:center; text-decoration-color:antiquewhite" ">
+        <br />
+        <br />
+        <br />
+        <form action="/Projekat/ZatrazenaVoznja">
+            <table align="center">
+                <tr>
+                    <td><b>Vaša lokacija(ulica,broj,mesto,postanški broj)</b></td>
+                    <td><input type="text" name="ulica" /></td>
+                    <td><input type="text" name="broj" /></td>
+                    <td><input type="text" name="mesto" /></td>
+                    <td><input type="text" name="postanski_broj" /></td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>
+                            Odaberite tip vozila:
+                        </b>
+                    </td>
+                    <td>
+                        <select name="tip_vozila">
+                            <option value="putnicko">Putničko</option>
+                            <option value="kombi">Kombi</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>
+                            Odaberite koordinate x i y:
+                        </b>
+                    </td>
+                    <td><input type="text" name="x" /></td>
+                    <td><input type="text" name="y" /></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" value="Zatraži vožnju" />
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <button onclick="goBack()">Vrati se na profil</button>
     </div>
-    <br />
-    <br />
-    <br />
-
-    <form action="/Projekat/ZatrazenaVoznja">
-        <table>
-            <tr>
-                <td><b>Vaša lokacija(ulica,broj,mesto,postanški broj)</b></td>
-                <td><input type="text" name="ulica" /></td>
-                <td><input type="text" name="broj" /></td>
-                <td><input type="text" name="mesto" /></td>
-                <td><input type="text" name="postanski_broj" /></td>
-            </tr>
-            <tr>
-                <td>
-                    <b>
-                        Odaberite tip vozila:
-                    </b>
-                </td>
-                <td>
-                    <select name="tip_vozila">
-                        <option value="putnicko">Putničko</option>
-                        <option value="kombi">Kombi</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <b>
-                        Odaberite koordinate x i y:
-                    </b>
-                </td>
-                <td><input type="text" name="x" /></td>
-                <td><input type="text" name="y" /></td>
-            </tr>
-<tr>
-                <td colspan="2">
-                    <input type="submit" value="Zatraži vožnju" />
-                </td>
-            </tr>
-
-        </table>
-    </form>
 </body>
 </html>

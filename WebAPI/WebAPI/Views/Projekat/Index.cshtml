@@ -3,40 +3,42 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Prijava korisnika</h2>
-
 <html>
-
-<body>
-    <form method="post" action="/Projekat/LogIn">
-        <table border="1">
-            <tr>
-                <td colspan="2" align="center">Prijavite Se</td>
-            </tr>
-            <tr>
-                <td>
-                    Korisnicko Ime:
-                </td>
-                <td>
-                    <input type="text" name="korisnicko_ime" />
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Sifra:
-                </td>
-                <td>
-                    <input type="text" name="password" />
-                </td>
-            </tr>
-            <tr>
-                <td><input type="submit" value="Log in" /></td>
-            </tr>
-        </table>
+<head>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body style="width:auto; height:auto; background-image:url('../taxi-service.png'); background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;">
+      <div style="position:center; padding-top: 20px; text-align: center; position:center; top: 50%;
+                left: 50%;">
+    <form method="post" action="/Projekat/LogIn" class="w3-container w3-card-4 w3-light-grey w3-text-blue w3-margin">
+        <div class="w3-row w3-section">
+            <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-user"></i></div>
+            <div class="w3-rest">
+                <input type="text" class="w3-input w3-border" data-val="true" data-val-length="Minimum 1 karakter" data-val-length-max="20" data-val-length-min="1" data-val-required="*" name="korisnicko_ime" placeholder="Korisničko ime"> <span class="text-danger field-validation-error" data-valmsg-for="user" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+        <div class="w3-row w3-section">
+            <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-user"></i></div>
+            <div class="w3-rest">
+                <input type="password" class="w3-input w3-border" data-val="true" data-val-length="Minimum 1 karakter" data-val-length-max="20" data-val-length-min="1" data-val-required="*" name="password" placeholder="Šifra"> <span class="text-danger field-validation-error" data-valmsg-for="pass" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+        <p class="w3-center">
+            <button class="w3-button w3-section w3-blue w3-ripple">Uloguj se</button>
+        </p>
     </form>
-
-    <h3>Registracija</h3>
-    @Html.ActionLink("Registracija", "RegisterStart");
-
+    <form action="/Projekat/RegisterStart">
+        <p class="w3-center">
+            <button class="w3-button w3-section w3-blue w3-ripple">Registrujte se</button>
+        </p>
+    </form>
+  </div>
 </body>
 </html>

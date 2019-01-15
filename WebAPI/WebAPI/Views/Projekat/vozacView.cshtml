@@ -1,106 +1,51 @@
 ﻿@model WebAPI.Models.Vozac
 @{
-    ViewBag.Title = "vozacView";
-    ViewBag.Vozac = Model;
-}
+                /**/
 
-<html>
-<body style="background-color:limegreen">
+                ViewBag.Title = "vozacView";
+                ViewBag.Vozac = Model;
+}
+<head>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body style="width:auto; height:auto; background-image:url('../taxi-service.png'); background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;">
     <div style="text-align:center">
-        <h2>Dobrodošli @Model.Korisnicko_ime</h2>
+        <h2>Dobrodošli @</h2>
         <h3>Vaša trenutna lokacija je: @Model.Lokacija.Adresa.Ulica @Model.Lokacija.Adresa.Broj, @Model.Lokacija.Adresa.PostanskiBroj @Model.Lokacija.Adresa.Mesto</h3>
-        <table>
-            <tr>
-                <td colspan="2">
-                    Podaci o vašem automobilu:
-                </td>
-            </tr>
-            <tr>
-                <td>Broj vozila</td>
-                <td>Godište</td>
-                <td>Registraciona oznaka</td>
-                <td>Tip automobila</td>
-            </tr>
-            <tr>
-                <td>
-                    @Model.Automobil.BrojTaksiVozila
-                </td>
-                <td>
-                    @Model.Automobil.GodisteAutomobila
-                </td>
-                <td>
-                    @Model.Automobil.BrojRegistarskeOznake
-                </td>
-                <td>
-                    @Model.Automobil.Tip
-                </td>
-            </tr>
-        </table>
-    </div>
-    <div style="text-align:right">
-        <form action="/Projekat/OdjaviVozac">
-            <input type="submit" value="Odjavi se" />
-        </form>
     </div>
     <div style="text-align:center">
-        <table>
+        <table align="center">
             <tr>
-                <td>
+                <td width="50">
                     <form action="/Projekat/PromeniLokacijuVozaca">
-                        <input type="hidden" value="@Model" />
-                        <input type="submit" value="Promeni lokaciju" />
+                        <input type="submit" value="Izmeni lokaciju" />
                     </form>
                 </td>
                 <td>
                     <form action="/Projekat/EditVozac">
-                        <input type="submit" value="Izmeni lične podatke" />
+                        <input type="submit" value="Izmeni podatke" />
+                    </form>
+                </td>
+                <td>
+                    <form action="/Projekat/OdjaviVozac">
+                        <input type="submit" value="Odjavi se" />
                     </form>
                 </td>
             </tr>
         </table>
     </div>
-
-    <table>
-        <tr>
-            <td>Vaši podaci</td>
-        </tr>
-        <tr>
-            <td>Ime:</td>
-            <td><label>@Model.Ime</label></td>
-        </tr>
-        <tr>
-            <td>Prezime:</td>
-            <td><label>@Model.Prezime</label></td>
-        </tr>
-        <tr>
-            <td>Pol:</td>
-            <td>
-                <label>@Model.Pol</label>
-            </td>
-        </tr>
-        <tr>
-            <td>Jmbg:</td>
-            <td><label>@Model.Jmbg</label></td>
-        </tr>
-        <tr>
-            <td>Korisnicko ime:</td>
-            <td><label>@Model.Korisnicko_ime</label></td>
-        </tr>
-        <tr>
-            <td>E-mail:</td>
-            <td><label>@Model.Email</label></td>
-        </tr>
-        <tr>
-            <td>Broj telefona:</td>
-            <td><label>@Model.Kontakt_telefon</label></td>
-        </tr>
-    </table>
-
 </body>
-</html>
 
-<div style="text-align:center"><h2>Sve kreirane vožnje</h2></div>
-<table align="center" border="1">
+
+<div style="text-align:center"></div>
+<table align="center" >
     <tr>
         <td>Datum i vreme porudžbine vožnje</td>
         <td>Ime i prezime mušterije</td>
@@ -121,7 +66,7 @@
                     @v.StatusVoznje.ToString()
                 </td>
                 @if (v.StatusVoznje == WebAPI.Models.StatusVoznje.KreiranaNaCekanju)
-                    {
+                {
                     <td>
                         <form method="post" action="/Projekat/VozacPrihvata">
                             <input type="submit" value="Prihvati  vožnju" />
@@ -194,53 +139,53 @@ else if (Model.Filter == true)
                 </td>
             </tr>
             @foreach (WebAPI.Models.Voznja v in @Model.Filtrirane)
-                {
+            {
                 <tr>
                     <td>Datum i vreme porudžbine</td>
-                    <td><lable>@v.Datum_i_vreme</lable></td>
+                    <td><lable>@</lable></td>
                 </tr>
-                    <tr>
-                        <td>Status vožnje</td>
-                        <td>@v.StatusVoznje.ToString()</td>
-                    </tr>
-                    <tr>
-                        <td>Početna lokacija</td>
-                        <td><label>@v.LokacijaNaKojuTaksiDolazi.Adresa.Ulica @v.LokacijaNaKojuTaksiDolazi.Adresa.Broj ,@v.LokacijaNaKojuTaksiDolazi.Adresa.Mesto @v.LokacijaNaKojuTaksiDolazi.Adresa.PostanskiBroj</label></td>
-                        @if (v.StatusVoznje == WebAPI.Models.StatusVoznje.Uspesna && v.Musterija.Korisnicko_ime != null)
-                        {
-                            <td rowspan="2">
-                                <form action="/Projekat/UspesnoOtkazanaVoznja">
-                                    <input type="hidden" name="korisnik" value="@Model.Korisnicko_ime" />
-                                    <input type="hidden" name="datum" value="@v.Datum_i_vreme" />
-                                    <input type="submit" value="Ostavi komentar" />
-                                </form>
-                            </td>
-                        }
-                        @if (v.StatusVoznje == WebAPI.Models.StatusVoznje.KreiranaNaCekanju)
-                        {
-                            <td rowspan="2">
-                                <form action="/Projekat/OtazujeMusterija">
-                                    <input type="hidden" name="korisnik" value="@Model.Korisnicko_ime" />
-                                    <input type="hidden" name="datum" value="@v.Datum_i_vreme" />
-                                    <input type="submit" value="Otkaži vožnju!" />
-                                </form>
-                                <form action="/Projekat/IzmeniVoznjuMusterija">
-                                    <input type="hidden" name="korisnik" value="@Model.Korisnicko_ime" />
-                                    <input type="hidden" name="datum" value="@v.Datum_i_vreme" />
-                                    <input type="submit" value="Izmeni vožnju" />
-                                </form>
-                            </td>
-                        }
+                <tr>
+                    <td>Status vožnje</td>
+                    <td>@</td>
+                </tr>
+                <tr>
+                    <td>Početna lokacija</td>
+                    <td><label>@ @ ,@ @</label></td>
+                    @if (v.StatusVoznje == WebAPI.Models.StatusVoznje.Uspesna && v.Musterija.Korisnicko_ime != null)
+                    {
                         <td rowspan="2">
-                            <form action="/Projekat/PrikaziKomentar">
-                                <input type="submit" value="Prikaži vožnju" />
+                            <form action="/Projekat/UspesnoOtkazanaVoznja">
+                                <input type="hidden" name="korisnik" value="@Model.Korisnicko_ime" />
                                 <input type="hidden" name="datum" value="@v.Datum_i_vreme" />
-                                <input type="hidden" name="korisnik" value="@v.Musterija.Korisnicko_ime" />
-                                <input type="hidden" name="vozac" value="@v.Vozac.Korisnicko_ime" />
-                                <input type="hidden" name="dispecer" value="@v.Dispecer.Korisnicko_ime" />
+                                <input type="submit" value="Ostavi komentar" />
                             </form>
                         </td>
-                    </tr>
+                    }
+                    @if (v.StatusVoznje == WebAPI.Models.StatusVoznje.KreiranaNaCekanju)
+                    {
+                        <td rowspan="2">
+                            <form action="/Projekat/OtazujeMusterija">
+                                <input type="hidden" name="korisnik" value="@Model.Korisnicko_ime" />
+                                <input type="hidden" name="datum" value="@v.Datum_i_vreme" />
+                                <input type="submit" value="Otkaži vožnju!" />
+                            </form>
+                            <form action="/Projekat/IzmeniVoznjuMusterija">
+                                <input type="hidden" name="korisnik" value="@Model.Korisnicko_ime" />
+                                <input type="hidden" name="datum" value="@v.Datum_i_vreme" />
+                                <input type="submit" value="Izmeni vožnju" />
+                            </form>
+                        </td>
+                    }
+                    <td rowspan="2">
+                        <form action="/Projekat/PrikaziKomentar">
+                            <input type="submit" value="Prikaži vožnju" />
+                            <input type="hidden" name="datum" value="@v.Datum_i_vreme" />
+                            <input type="hidden" name="korisnik" value="@v.Musterija.Korisnicko_ime" />
+                            <input type="hidden" name="vozac" value="@v.Vozac.Korisnicko_ime" />
+                            <input type="hidden" name="dispecer" value="@v.Dispecer.Korisnicko_ime" />
+                        </form>
+                    </td>
+                </tr>
             }
         </table>
         <form action="/Projekat/PonistiFilter">
@@ -282,53 +227,53 @@ else if (Model.Pretrazivanje == true)
                 </td>
             </tr>
             @foreach (WebAPI.Models.Voznja v in @Model.Pretrazene)
-                {
+            {
                 <tr>
                     <td>Datum i vreme porudžbine</td>
-                    <td><lable>@v.Datum_i_vreme</lable></td>
+                    <td><lable>@</lable></td>
                 </tr>
-                    <tr>
-                        <td>Status vožnje</td>
-                        <td>@v.StatusVoznje.ToString()</td>
-                    </tr>
-                    <tr>
-                        <td>Početna lokacija</td>
-                        <td><label>@v.LokacijaNaKojuTaksiDolazi.Adresa.Ulica @v.LokacijaNaKojuTaksiDolazi.Adresa.Broj ,@v.LokacijaNaKojuTaksiDolazi.Adresa.Mesto @v.LokacijaNaKojuTaksiDolazi.Adresa.PostanskiBroj</label></td>
-                        @if (v.StatusVoznje == WebAPI.Models.StatusVoznje.Uspesna && v.Musterija.Korisnicko_ime != null)
-                        {
-                            <td rowspan="2">
-                                <form action="/Projekat/UspesnoOtkazanaVoznja">
-                                    <input type="hidden" name="korisnik" value="@Model.Korisnicko_ime" />
-                                    <input type="hidden" name="datum" value="@v.Datum_i_vreme" />
-                                    <input type="submit" value="Ostavi komentar" />
-                                </form>
-                            </td>
-                        }
-                        @if (v.StatusVoznje == WebAPI.Models.StatusVoznje.KreiranaNaCekanju)
-                        {
-                            <td rowspan="2">
-                                <form action="/Projekat/OtazujeMusterija">
-                                    <input type="hidden" name="korisnik" value="@Model.Korisnicko_ime" />
-                                    <input type="hidden" name="datum" value="@v.Datum_i_vreme" />
-                                    <input type="submit" value="Otkaži vožnju!" />
-                                </form>
-                                <form action="/Projekat/IzmeniVoznjuMusterija">
-                                    <input type="hidden" name="korisnik" value="@Model.Korisnicko_ime" />
-                                    <input type="hidden" name="datum" value="@v.Datum_i_vreme" />
-                                    <input type="submit" value="Izmeni vožnju" />
-                                </form>
-                            </td>
-                        }
+                <tr>
+                    <td>Status vožnje</td>
+                    <td>@</td>
+                </tr>
+                <tr>
+                    <td>Početna lokacija</td>
+                    <td><label>@ @ ,@ @</label></td>
+                    @if (v.StatusVoznje == WebAPI.Models.StatusVoznje.Uspesna && v.Musterija.Korisnicko_ime != null)
+                    {
                         <td rowspan="2">
-                            <form action="/Projekat/PrikaziKomentar">
-                                <input type="submit" value="Prikaži vožnju" />
+                            <form action="/Projekat/UspesnoOtkazanaVoznja">
+                                <input type="hidden" name="korisnik" value="@Model.Korisnicko_ime" />
                                 <input type="hidden" name="datum" value="@v.Datum_i_vreme" />
-                                <input type="hidden" name="korisnik" value="@v.Musterija.Korisnicko_ime" />
-                                <input type="hidden" name="vozac" value="@v.Vozac.Korisnicko_ime" />
-                                <input type="hidden" name="dispecer" value="@v.Dispecer.Korisnicko_ime" />
+                                <input type="submit" value="Ostavi komentar" />
                             </form>
                         </td>
-                    </tr>
+                    }
+                    @if (v.StatusVoznje == WebAPI.Models.StatusVoznje.KreiranaNaCekanju)
+                    {
+                        <td rowspan="2">
+                            <form action="/Projekat/OtazujeMusterija">
+                                <input type="hidden" name="korisnik" value="@Model.Korisnicko_ime" />
+                                <input type="hidden" name="datum" value="@v.Datum_i_vreme" />
+                                <input type="submit" value="Otkaži vožnju!" />
+                            </form>
+                            <form action="/Projekat/IzmeniVoznjuMusterija">
+                                <input type="hidden" name="korisnik" value="@Model.Korisnicko_ime" />
+                                <input type="hidden" name="datum" value="@v.Datum_i_vreme" />
+                                <input type="submit" value="Izmeni vožnju" />
+                            </form>
+                        </td>
+                    }
+                    <td rowspan="2">
+                        <form action="/Projekat/PrikaziKomentar">
+                            <input type="submit" value="Prikaži vožnju" />
+                            <input type="hidden" name="datum" value="@v.Datum_i_vreme" />
+                            <input type="hidden" name="korisnik" value="@v.Musterija.Korisnicko_ime" />
+                            <input type="hidden" name="vozac" value="@v.Vozac.Korisnicko_ime" />
+                            <input type="hidden" name="dispecer" value="@v.Dispecer.Korisnicko_ime" />
+                        </form>
+                    </td>
+                </tr>
             }
         </table>
         <form action="/Projekat/PonistiFilter">
@@ -379,53 +324,53 @@ else if (Model.Sortiranje == true)
                 </td>
             </tr>
             @foreach (WebAPI.Models.Voznja v in @Model.Sortirane)
-                {
+            {
                 <tr>
                     <td>Datum i vreme porudžbine</td>
-                    <td><lable>@v.Datum_i_vreme</lable></td>
+                    <td><lable>@</lable></td>
                 </tr>
-                    <tr>
-                        <td>Status vožnje</td>
-                        <td>@v.StatusVoznje.ToString()</td>
-                    </tr>
-                    <tr>
-                        <td>Početna lokacija</td>
-                        <td><label>@v.LokacijaNaKojuTaksiDolazi.Adresa.Ulica @v.LokacijaNaKojuTaksiDolazi.Adresa.Broj ,@v.LokacijaNaKojuTaksiDolazi.Adresa.Mesto @v.LokacijaNaKojuTaksiDolazi.Adresa.PostanskiBroj</label></td>
-                        @if (v.StatusVoznje == WebAPI.Models.StatusVoznje.Uspesna && v.Musterija.Korisnicko_ime != null)
-                        {
-                            <td rowspan="2">
-                                <form action="/Projekat/UspesnoOtkazanaVoznja">
-                                    <input type="hidden" name="korisnik" value="@Model.Korisnicko_ime" />
-                                    <input type="hidden" name="datum" value="@v.Datum_i_vreme" />
-                                    <input type="submit" value="Ostavi komentar" />
-                                </form>
-                            </td>
-                        }
-                        @if (v.StatusVoznje == WebAPI.Models.StatusVoznje.KreiranaNaCekanju)
-                        {
-                            <td rowspan="2">
-                                <form action="/Projekat/OtazujeMusterija">
-                                    <input type="hidden" name="korisnik" value="@Model.Korisnicko_ime" />
-                                    <input type="hidden" name="datum" value="@v.Datum_i_vreme" />
-                                    <input type="submit" value="Otkaži vožnju!" />
-                                </form>
-                                <form action="/Projekat/IzmeniVoznjuMusterija">
-                                    <input type="hidden" name="korisnik" value="@Model.Korisnicko_ime" />
-                                    <input type="hidden" name="datum" value="@v.Datum_i_vreme" />
-                                    <input type="submit" value="Izmeni vožnju" />
-                                </form>
-                            </td>
-                        }
+                <tr>
+                    <td>Status vožnje</td>
+                    <td>@</td>
+                </tr>
+                <tr>
+                    <td>Početna lokacija</td>
+                    <td><label>@ @ ,@ @</label></td>
+                    @if (v.StatusVoznje == WebAPI.Models.StatusVoznje.Uspesna && v.Musterija.Korisnicko_ime != null)
+                    {
                         <td rowspan="2">
-                            <form action="/Projekat/PrikaziKomentar">
-                                <input type="submit" value="Prikaži vožnju" />
+                            <form action="/Projekat/UspesnoOtkazanaVoznja">
+                                <input type="hidden" name="korisnik" value="@Model.Korisnicko_ime" />
                                 <input type="hidden" name="datum" value="@v.Datum_i_vreme" />
-                                <input type="hidden" name="korisnik" value="@v.Musterija.Korisnicko_ime" />
-                                <input type="hidden" name="vozac" value="@v.Vozac.Korisnicko_ime" />
-                                <input type="hidden" name="dispecer" value="@v.Dispecer.Korisnicko_ime" />
+                                <input type="submit" value="Ostavi komentar" />
                             </form>
                         </td>
-                    </tr>
+                    }
+                    @if (v.StatusVoznje == WebAPI.Models.StatusVoznje.KreiranaNaCekanju)
+                    {
+                        <td rowspan="2">
+                            <form action="/Projekat/OtazujeMusterija">
+                                <input type="hidden" name="korisnik" value="@Model.Korisnicko_ime" />
+                                <input type="hidden" name="datum" value="@v.Datum_i_vreme" />
+                                <input type="submit" value="Otkaži vožnju!" />
+                            </form>
+                            <form action="/Projekat/IzmeniVoznjuMusterija">
+                                <input type="hidden" name="korisnik" value="@Model.Korisnicko_ime" />
+                                <input type="hidden" name="datum" value="@v.Datum_i_vreme" />
+                                <input type="submit" value="Izmeni vožnju" />
+                            </form>
+                        </td>
+                    }
+                    <td rowspan="2">
+                        <form action="/Projekat/PrikaziKomentar">
+                            <input type="submit" value="Prikaži vožnju" />
+                            <input type="hidden" name="datum" value="@v.Datum_i_vreme" />
+                            <input type="hidden" name="korisnik" value="@v.Musterija.Korisnicko_ime" />
+                            <input type="hidden" name="vozac" value="@v.Vozac.Korisnicko_ime" />
+                            <input type="hidden" name="dispecer" value="@v.Dispecer.Korisnicko_ime" />
+                        </form>
+                    </td>
+                </tr>
             }
         </table>
         <form action="/Projekat/PonistiFilter">
@@ -469,7 +414,6 @@ else
                     </form>
                 </td>
             </tr>
-
             <tr>
                 <td>Pretraži vožnju </td>
                 <td>
@@ -490,54 +434,54 @@ else
                 </td>
             </tr>
             @foreach (WebAPI.Models.Voznja v in @Model.listaVoznja)
-                {
+            {
 
                 <tr>
                     <td>Datum i vreme porudžbine</td>
-                    <td><lable>@v.Datum_i_vreme</lable></td>
+                    <td><lable>@</lable></td>
                 </tr>
-                    <tr>
-                        <td>Status vožnje</td>
-                        <td>@v.StatusVoznje.ToString()</td>
-                    </tr>
-                    <tr>
-                        <td>Početna lokacija</td>
-                        <td><label>@v.LokacijaNaKojuTaksiDolazi.Adresa.Ulica @v.LokacijaNaKojuTaksiDolazi.Adresa.Broj ,@v.LokacijaNaKojuTaksiDolazi.Adresa.Mesto @v.LokacijaNaKojuTaksiDolazi.Adresa.PostanskiBroj</label></td>
-                        @if (v.StatusVoznje == WebAPI.Models.StatusVoznje.Uspesna && v.Musterija.Korisnicko_ime != null)
-                        {
-                            <td>
-                                <form action="/Projekat/UspesnoOtkazanaVoznja">
-                                    <input type="hidden" name="korisnik" value="@Model.Korisnicko_ime" />
-                                    <input type="hidden" name="datum" value="@v.Datum_i_vreme" />
-                                    <input type="submit" value="Ostavi komentar" />
-                                </form>
-                            </td>
-                        }
-                        @if (v.StatusVoznje == WebAPI.Models.StatusVoznje.KreiranaNaCekanju)
-                        {
-                            <td>
-                                <form action="/Projekat/OtazujeMusterija">
-                                    <input type="hidden" name="korisnik" value="@Model.Korisnicko_ime" />
-                                    <input type="hidden" name="datum" value="@v.Datum_i_vreme" />
-                                    <input type="submit" value="Otkaži vožnju!" />
-                                </form>
-                                <form action="/Projekat/IzmeniVoznjuMusterija">
-                                    <input type="hidden" name="korisnik" value="@Model.Korisnicko_ime" />
-                                    <input type="hidden" name="datum" value="@v.Datum_i_vreme" />
-                                    <input type="submit" value="Izmeni vožnju" />
-                                </form>
-                            </td>
-                        }
+                <tr>
+                    <td>Status vožnje</td>
+                    <td>@</td>
+                </tr>
+                <tr>
+                    <td>Početna lokacija</td>
+                    <td><label>@Model.Lokacija.Adresa.Ulica @Model.Lokacija.Adresa.Broj, @Model.Lokacija.Adresa.PostanskiBroj @Model.Lokacija.Adresa.Mesto</label></td>
+                    @if (v.StatusVoznje == WebAPI.Models.StatusVoznje.Uspesna && v.Musterija.Korisnicko_ime != null)
+                    {
                         <td>
-                            <form action="/Projekat/PrikaziKomentar">
-                                <input type="submit" value="Prikaži vožnju" />
+                            <form action="/Projekat/UspesnoOtkazanaVoznja">
+                                <input type="hidden" name="korisnik" value="@Model.Korisnicko_ime" />
                                 <input type="hidden" name="datum" value="@v.Datum_i_vreme" />
-                                <input type="hidden" name="korisnik" value="@v.Musterija.Korisnicko_ime" />
-                                <input type="hidden" name="vozac" value="@v.Vozac.Korisnicko_ime" />
-                                <input type="hidden" name="dispecer" value="@v.Dispecer.Korisnicko_ime" />
+                                <input type="submit" value="Ostavi komentar" />
                             </form>
                         </td>
-                    </tr>
+                    }
+                    @if (v.StatusVoznje == WebAPI.Models.StatusVoznje.KreiranaNaCekanju)
+                    {
+                        <td>
+                            <form action="/Projekat/OtazujeMusterija">
+                                <input type="hidden" name="korisnik" value="@Model.Korisnicko_ime" />
+                                <input type="hidden" name="datum" value="@v.Datum_i_vreme" />
+                                <input type="submit" value="Otkaži vožnju!" />
+                            </form>
+                            <form action="/Projekat/IzmeniVoznjuMusterija">
+                                <input type="hidden" name="korisnik" value="@Model.Korisnicko_ime" />
+                                <input type="hidden" name="datum" value="@v.Datum_i_vreme" />
+                                <input type="submit" value="Izmeni vožnju" />
+                            </form>
+                        </td>
+                    }
+                    <td>
+                        <form action="/Projekat/PrikaziKomentar">
+                            <input type="submit" value="Prikaži vožnju" />
+                            <input type="hidden" name="datum" value="@v.Datum_i_vreme" />
+                            <input type="hidden" name="korisnik" value="@v.Musterija.Korisnicko_ime" />
+                            <input type="hidden" name="vozac" value="@v.Vozac.Korisnicko_ime" />
+                            <input type="hidden" name="dispecer" value="@v.Dispecer.Korisnicko_ime" />
+                        </form>
+                    </td>
+                </tr>
             }
         </table>
     </div>

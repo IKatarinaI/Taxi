@@ -1,63 +1,63 @@
 ﻿<Ulogovani>
 	<Korisnik>
-		<Ime>Luka</Ime>
-		<Prezime>Bosanac</Prezime>
+		<Ime>admin</Ime>
+		<Prezime>admin</Prezime>
 		<Jmbg>31090913934309</Jmbg>
-		<KorisnickoIme>boske</KorisnickoIme>
-		<Lozinka>vukovar</Lozinka>
+		<KorisnickoIme>admin</KorisnickoIme>
+		<Lozinka>admin</Lozinka>
 		<Pol>Muski</Pol>
-		<E-Mail>boske@live.com</E-Mail>
+		<E-Mail>admin@admin.com</E-Mail>
 		<BrojTelefona>065343938</BrojTelefona>
 		<Uloga>Dispecer</Uloga>
 	</Korisnik>
 	<Korisnik>
-		<Ime>Bogdan</Ime>
-		<Prezime>Kovacev</Prezime>
+		<Ime>addmin</Ime>
+		<Prezime>addmin</Prezime>
 		<Jmbg>394934893</Jmbg>
-		<KorisnickoIme>bosa</KorisnickoIme>
-		<Lozinka>karavukovo</Lozinka>
-		<Pol>Muski</Pol>
-		<E-Mail>bogi@gmail.com</E-Mail>
+		<KorisnickoIme>addmin</KorisnickoIme>
+		<Lozinka>addmin</Lozinka>
+		<Pol>Zenski</Pol>
+		<E-Mail>addmin@gmail.com</E-Mail>
 		<BrojTelefona>064293892</BrojTelefona>
 		<Uloga>Dispecer</Uloga>
 	</Korisnik>
 	<Korisnik>
-		<Ime>Aleksandar</Ime>
-		<Prezime>Jancikin</Prezime>
+		<Ime>Ivana</Ime>
+		<Prezime>Markanovic</Prezime>
 		<Jmbg>389328233</Jmbg>
-		<KorisnickoIme>janpi</KorisnickoIme>
-		<Lozinka>vinjak</Lozinka>
-		<Pol>Muski</Pol>
-		<E-Mail>api@hotmail.com</E-Mail>
+		<KorisnickoIme>mivana</KorisnickoIme>
+		<Lozinka>mivana</Lozinka>
+		<Pol>Zenski</Pol>
+		<E-Mail>mivana@mivana.com</E-Mail>
 		<BrojTelefona>064323929</BrojTelefona>
-		<Uloga>Dispecer</Uloga>
+		<Uloga>Musterija</Uloga>
 	</Korisnik>
 	<Korisnik>
-		<Ime>Maja</Ime>
-		<Prezime>Bosanac</Prezime>
+		<Ime>Simona</Ime>
+		<Prezime>Maric</Prezime>
 		<Jmbg>3049094309f</Jmbg>
-		<KorisnickoIme>maja</KorisnickoIme>
-		<Lozinka>m</Lozinka>
-		<Pol>Muski</Pol>
-		<E-Mail>maja@gmail.com</E-Mail>
+		<KorisnickoIme>simona</KorisnickoIme>
+		<Lozinka>Simona</Lozinka>
+		<Pol>Zenski</Pol>
+		<E-Mail>simona@simona.com</E-Mail>
 		<BrojTelefona>06423423</BrojTelefona>
 		<Uloga>Musterija</Uloga>
 	</Korisnik>
 	<Korisnik>
-		<Ime>Dragana</Ime>
-		<Prezime>Varnicic</Prezime>
+		<Ime>Milena</Ime>
+		<Prezime>Kartal</Prezime>
 		<Jmbg>34893478</Jmbg>
-		<KorisnickoIme>varni</KorisnickoIme>
-		<Lozinka>v</Lozinka>
+		<KorisnickoIme>milena</KorisnickoIme>
+		<Lozinka>milena</Lozinka>
 		<Pol>Zenski</Pol>
-		<E-Mail>varni@gmail.com</E-Mail>
+		<E-Mail>milena@milena.com</E-Mail>
 		<BrojTelefona>06445983</BrojTelefona>
 		<Uloga>Vozac</Uloga>
 		<Automobil>
 			<Godiste>2000</Godiste>
 			<Registracija>ns-383-ej</Registracija>
 			<TaxiBroj>1</TaxiBroj>
-			<TipVozila>kombi</TipVozila>
+			<TipVozila>putnicki</TipVozila>
 		</Automobil>
 		<Adresa>
 			<NazivUlice>Vojvodjanska</NazivUlice>
@@ -69,38 +69,24 @@
 		</Adresa>
 	</Korisnik>
 	<Korisnik>
-		<Ime>Vanja</Ime>
-		<Prezime>Varnicic</Prezime>
+		<Ime>Tanja</Ime>
+		<Prezime>Jovanovic</Prezime>
 		<Jmbg>3094383</Jmbg>
-		<KorisnickoIme>miska</KorisnickoIme>
-		<Lozinka>m</Lozinka>
-		<Pol>Muski</Pol>
-		<E-Mail>miska@gmail.com</E-Mail>
+		<KorisnickoIme>tanja</KorisnickoIme>
+		<Lozinka>tanja</Lozinka>
+		<Pol>Zenski</Pol>
+		<E-Mail>tanja@tanja.com</E-Mail>
 		<BrojTelefona>06434932</BrojTelefona>
 		<Uloga>Musterija</Uloga>
 	</Korisnik>
 	<Korisnik>
-		<Ime>Milica</Ime>
-		<Prezime>Varnicic</Prezime>
-		<Jmbg>
-		</Jmbg>
-		<KorisnickoIme>
-		</KorisnickoIme>
-		<Lozinka>Zenski</Lozinka>
-		<Pol>Muski</Pol>
-		<E-Mail>Vozac</E-Mail>
-		<BrojTelefona>
-			</BrojTelefona>
-		<Uloga>Musterija</Uloga>
-	</Korisnik>
-	<Korisnik>
-		<Ime>Milica</Ime>
-		<Prezime>Varnicic</Prezime>
+		<Ime>Bojan</Ime>
+		<Prezime>Batalo</Prezime>
 		<Jmbg>1302952819993</Jmbg>
-		<KorisnickoIme>mica</KorisnickoIme>
-		<Lozinka>m</Lozinka>
+		<KorisnickoIme>bojan</KorisnickoIme>
+		<Lozinka>bojan</Lozinka>
 		<Pol>Muski</Pol>
-		<E-Mail>mica@gmail.com</E-Mail>
+		<E-Mail>bojan@bojan.com</E-Mail>
 		<BrojTelefona>06618273</BrojTelefona>
 		<Uloga>Vozac</Uloga>
 		<Automobil>
@@ -117,38 +103,5 @@
 			<X>34</X>
 			<Y>343</Y>
 		</Adresa>
-	</Korisnik>
-	<Korisnik>
-		<Ime>Milenko</Ime>
-		<Prezime>Bosanac</Prezime>
-		<Jmbg>3393949348</Jmbg>
-		<KorisnickoIme>mile</KorisnickoIme>
-		<Lozinka>m</Lozinka>
-		<Pol>Muski</Pol>
-		<E-Mail>mile@gmail.com</E-Mail>
-		<BrojTelefona>0549382349</BrojTelefona>
-		<Uloga>Musterija</Uloga>
-	</Korisnik>
-	<Korisnik>
-		<Ime>Musterija</Ime>
-		<Prezime>Musteric</Prezime>
-		<Jmbg>43432323</Jmbg>
-		<KorisnickoIme>musterija</KorisnickoIme>
-		<Lozinka>m</Lozinka>
-		<Pol>Muski</Pol>
-		<E-Mail>musterija@gmail.com</E-Mail>
-		<BrojTelefona>0544294223</BrojTelefona>
-		<Uloga>Musterija</Uloga>
-	</Korisnik>
-	<Korisnik>
-		<Ime>Katarina</Ime>
-		<Prezime>Ivosevic</Prezime>
-		<Jmbg>0402995805090</Jmbg>
-		<KorisnickoIme>kata</KorisnickoIme>
-		<Lozinka>kata</Lozinka>
-		<Pol>Zenski</Pol>
-		<E-Mail>katarinaivosevic1995@gmail.com</E-Mail>
-		<BrojTelefona>0694219940</BrojTelefona>
-		<Uloga>Musterija</Uloga>
 	</Korisnik>
 </Ulogovani>

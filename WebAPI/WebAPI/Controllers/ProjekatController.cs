@@ -75,9 +75,98 @@ namespace WebAPI.Controllers
             }
         }
 
+        [HttpPost]
+        public ActionResult LogIn(string korisnicko_ime, string password)
+        {
+
+            foreach (Musterija m in PostojeciKorisnici.ListaMusterija)
+            {
+                if (m.Korisnicko_ime == korisnicko_ime && m.Lozinka != password)
+                {
+                    return View("PogresnaSifra");
+                }
+                else if (m.Korisnicko_ime == korisnicko_ime && m.Lozinka == password)
+                {
+                    m.Ulogovan = true;
+                    Session["korisnik"] = m;
+                    return View("musterijaView", m);
+                }
+            }
+
+            foreach (Dispecer d in PostojeciKorisnici.ListaDispecera)
+            {
+                if (d.Korisnicko_ime == korisnicko_ime && d.Lozinka != password)
+                {
+                    return View("PogresnaSifra");
+                }
+                else if (d.Korisnicko_ime == korisnicko_ime && d.Lozinka == password)
+                {
+                    d.Ulogovan = true;
+                    Session["korisnik"] = d;
+                    return View("dispecerView", d);
+                }
+            }
+
+            foreach (Vozac v in PostojeciKorisnici.ListaVozaca)
+            {
+                if (v.Korisnicko_ime == korisnicko_ime && v.Lozinka != password)
+                {
+                    return View("PogresnaSifra");
+                }
+                else if (v.Korisnicko_ime == korisnicko_ime && v.Lozinka == password)
+                {
+                    v.Ulogovan = true;
+                    Session["korisnik"] = v;
+                    return View("VozacView", v);
+                }
+            }
+
+            return View("NePostojiKorisnik");
+        }
+
+        [HttpPost]
+        public ActionResult Register(string ime, string prezime, string pol, string korisnicko_ime, string password, string email, string broj_telefona, string jmbg)
+        {
+            Pol p = Pol.Muski;
+            switch (pol)
+            {
+                case "MUSKI":
+                    p = Pol.Muski;
+                    break;
+                case "ZENSKI":
+                    p = Pol.Zenski;
+                    break;
+            }
+
+            Korisnik m = new Musterija(korisnicko_ime, password, ime, prezime, p, jmbg, broj_telefona, email, Uloge.Musterija);
+
+            if (PostojeciKorisnici.ListaMusterija != null)
+            {
+                foreach (Korisnik k in PostojeciKorisnici.ListaMusterija)
+                {
+                    if (k.Korisnicko_ime == m.Korisnicko_ime)
+                    {
+                        return View("KorisnikPostoji");
+                    }
+                }
+            }
+
+            PostojeciKorisnici.ListaKorisnika.Add(m);
+            PostojeciKorisnici.ListaMusterija.Add(m as Musterija);
+
+            Sacuvaj(PostojeciKorisnici.ListaKorisnika);
+
+            return View("Index");
+        }
+
         public ActionResult RegisterStart()
         {
             return View("Registracija");
+        }
+
+        public ActionResult Return()
+        {
+            return View("Index");
         }
 
         public ActionResult DodajVozacaStart()
@@ -266,7 +355,6 @@ namespace WebAPI.Controllers
         }
 
 
-        #region zatrazenaVoznja
         public ActionResult ZatrazenaVoznja(string ulica, string broj, string mesto, string postanski_broj, string tip_vozila, string x, string y)
         {
             Musterija m = Session["korisnik"] as Musterija;
@@ -286,23 +374,12 @@ namespace WebAPI.Controllers
             v.Musterija = m;
 
             v.StatusVoznje = StatusVoznje.KreiranaNaCekanju;
-            
-            /*
-            Komentar k = new Komentar("d", DateTime.Now, v, 3, );
-            new Komentar()
-            Dispecer d = new Dispecer();
-            Vozac vozac = new Vozac();
-            v.Komentar = k;
-            v.Dispecer = d;
-            v.Vozac = vozac;
-            v.Iznos = "24";
-            */
+
             m.listaVoznja.Add(v);
 
             PostojeciKorisnici.ListaSvihVoznji.Add(v);
-            
-                //dodajem voznju u listu musterija
-                foreach (Musterija m1 in PostojeciKorisnici.ListaMusterija)
+
+            foreach (Musterija m1 in PostojeciKorisnici.ListaMusterija)
                 {
                     if (m1.Korisnicko_ime.Equals(m.Korisnicko_ime))
                     {
@@ -322,8 +399,7 @@ namespace WebAPI.Controllers
             Sacuvaj(PostojeciKorisnici.ListaKorisnika);
             return View("ZatrazenaVoznja", v);
         }
-#endregion
-        #region dodajVozaca
+
         public ActionResult DodajVozaca(string ime, string prezime, string pol, string korisnicko_ime, string jmbg, string lozinka, string email, string kontakt_broj, string ulica, string broj, string mesto, string postanski_broj, string godiste, string reg, string taxiBroj, string tip)
         {
             TipAutomobila ti = TipAutomobila.kombi;
@@ -373,83 +449,12 @@ namespace WebAPI.Controllers
 
             Sacuvaj(PostojeciKorisnici.ListaKorisnika);
 
-            /*
-            string path = @"C:\Users\HP\Desktop\Projakat\WP1718-PR101-2015\WebAPI_AJAX\WebAPI\WebAPI\baza.xml";
-
-            if (System.IO.File.Exists(path))
-            {
-                XmlDocument xDoc = new XmlDocument();
-                xDoc.Load(path);
-
-                var allNodes = xDoc.GetElementsByTagName("Vozac");
-                var lastNode = allNodes[allNodes.Count - 1];
-                XmlElement node = SerializeToXmlElement(new Vozac(korisnicko_ime, lozinka, ime, prezime, p, jmbg, kontakt_broj, email, Uloge.Vozac, ulica, broj, mesto, postanski_broj));
-                XmlNode importNode = xDoc.ImportNode(node, true);
-                xDoc.DocumentElement.AppendChild(importNode);
-                xDoc.Save(path);
-            }
-
-            PostojeciKorisnici.ListaVozaca.Add(v);
-            PostojeciKorisnici.ListaKorisnika.Add(v);
-            */
+           
             Dispecer d = Session["korisnik"] as Dispecer;
 
             return View("VozacDodan", v);
         }
-#endregion
 
-        #region login
-        [HttpPost]
-        public ActionResult LogIn(string korisnicko_ime, string password)
-        {
-
-            foreach (Musterija m in PostojeciKorisnici.ListaMusterija)
-            {
-                if (m.Korisnicko_ime == korisnicko_ime && m.Lozinka != password)
-                {
-                    return View("PogresnaSifra");
-                }
-                else if (m.Korisnicko_ime == korisnicko_ime && m.Lozinka == password)
-                {
-                    m.Ulogovan = true;
-                    Session["korisnik"] = m;
-                    return View("musterijaView", m);
-                }
-            }
-
-            foreach (Dispecer d in PostojeciKorisnici.ListaDispecera)
-            {
-                if (d.Korisnicko_ime == korisnicko_ime && d.Lozinka != password)
-                {
-                    return View("PogresnaSifra");
-                }
-                else if (d.Korisnicko_ime == korisnicko_ime && d.Lozinka == password)
-                {
-                    d.Ulogovan = true;
-                    Session["korisnik"] = d;
-                    return View("dispecerView", d);
-                }
-            }
-
-            foreach (Vozac v in PostojeciKorisnici.ListaVozaca)
-            {
-                if (v.Korisnicko_ime == korisnicko_ime && v.Lozinka != password)
-                {
-                    return View("PogresnaSifra");
-                }
-                else if (v.Korisnicko_ime == korisnicko_ime && v.Lozinka == password)
-                {
-                    v.Ulogovan = true;
-                    Session["korisnik"] = v;
-                    return View("VozacView", v);
-                }
-            }
-
-            return View("NePostojiKorisnik");
-        }
-        #endregion
-
-#region serializeToXMl
         public static XmlElement SerializeToXmlElement(object o)
         {
             XmlDocument doc = new XmlDocument();
@@ -459,165 +464,6 @@ namespace WebAPI.Controllers
             }
             return doc.DocumentElement;
         }
-        #endregion
-
-#region register
-        [HttpPost]
-        public ActionResult Register(string ime, string prezime, string pol, string korisnicko_ime, string password, string email, string broj_telefona, string jmbg)
-        {
-            Pol p = Pol.Muski;
-            switch (pol)
-            {
-                case "muski":
-                    p = Pol.Muski;
-                    break;
-                case "zenski":
-                    p = Pol.Zenski;
-                    break;
-            }
-            
-            Korisnik m = new Musterija(korisnicko_ime, password, ime, prezime, p, jmbg, broj_telefona, email, Uloge.Musterija);
-
-            if (PostojeciKorisnici.ListaMusterija != null)
-            {
-                foreach (Korisnik k in PostojeciKorisnici.ListaMusterija)
-                {
-                    if (k.Korisnicko_ime == m.Korisnicko_ime)
-                    {
-                        return View("KorisnikPostoji");
-                    }
-                }
-            }
-
-            PostojeciKorisnici.ListaKorisnika.Add(m);
-            PostojeciKorisnici.ListaMusterija.Add(m as Musterija);
-
-            Sacuvaj(PostojeciKorisnici.ListaKorisnika);
-           // string path = @"C:\Users\HP\Desktop\Projakat\WP1718-PR101-2015\WebAPI_AJAX\WebAPI\WebAPI\baza.xml";
-
-
-            /*
-            //XmlSerializer serializer = new XmlSerializer(typeof(Musterija));
-            if (System.IO.File.Exists(path))
-            {
-                XmlDocument xDoc = new XmlDocument();
-                xDoc.Load(path);
-
-                var allNodes = xDoc.GetElementsByTagName("Musterija");
-                var lastNode = allNodes[allNodes.Count - 1];
-                XmlElement node = SerializeToXmlElement(new Musterija(korisnicko_ime, password, ime, prezime, p, jmbg, broj_telefona, email, Uloge.Musterija));
-                XmlNode importNode = xDoc.ImportNode(node, true);
-                xDoc.DocumentElement.AppendChild(importNode);
-                xDoc.Save(path);
-            }
-            else
-            {
-                Console.WriteLine("Greska jer nema dispecera");
-            }
-            #region commentWriteToXML 
-            /* 
-            string path = @"C:\Users\HP\Desktop\Projakat\WP1718-PR101-2015\WebAPI_AJAX\WebAPI\WebAPI\baza.xml";
-            if (!System.IO.File.Exists(path))
-            {
-                XmlWriterSettings xmlWriterSettings = new XmlWriterSettings();
-                xmlWriterSettings.Indent = true;
-                xmlWriterSettings.NewLineOnAttributes = true;
-                using (XmlWriter writer = XmlWriter.Create(path, xmlWriterSettings))
-                {
-                    foreach (Korisnik k in PostojeciKorisnici.ListaMusterija)
-                    {
-                        writer.WriteStartElement("Musterije");
-
-
-                        writer.WriteElementString("Imek", k.Ime);
-                        writer.WriteElementString("Prezime", k.Prezime);
-                        writer.WriteElementString("Pol", k.Pol.ToString());
-                        writer.WriteElementString("KorisnickoIme", k.Korisnicko_ime);
-                        writer.WriteElementString("Sifra", k.Lozinka);
-                        writer.WriteElementString("JMBG", k.Jmbg);
-                        writer.WriteElementString("KontaktTelefon", k.Kontakt_telefon);
-                        writer.WriteElementString("EMail", k.Email);
-                        writer.WriteElementString("Uloga", k.Uloga.ToString());
-
-                        writer.WriteEndElement();
-                    }
-                }
-            }
-            else
-            {
-                XDocument xDocument = XDocument.Load(path);
-                XElement root = xDocument.Element("Korisnici");
-                IEnumerable<XElement> rows = root.Descendants("Musterije");
-                
-                XElement firstRow = rows.First();
-                firstRow.AddBeforeSelf(
-                   
-                new XElement("Ime", ime);
-                new XElement("Prezime", prezime);
-                new XElement("Pol", pol.ToString());
-                new XElement("KorisnickoIme", korisnicko_ime);
-                new XElement("Sifra", password);
-                new XElement("JMBG", jmbg);
-                new XElement("KontaktTelefon", broj_telefona);
-                new XElement("EMail", email);
-                new XElement("Uloga", Uloge.Musterija.ToString());
-                xDocument.Save(path);
-            }
-
-            using (XmlWriter writer = XmlWriter.Create(@"C:\Users\HP\Desktop\Projakat\WP1718-PR101-2015\WebAPI_AJAX\WebAPI\WebAPI\baza.xml"))
-            {
-                writer.WriteStartDocument();
-                writer.WriteStartElement("Korisnici");
-
-                foreach (Korisnik k in PostojeciKorisnici.ListaMusterija)
-                {
-                    writer.WriteStartElement("Musterije");
-
-
-                    writer.WriteElementString("Ime", k.Ime);
-                    writer.WriteElementString("Prezime", k.Prezime);
-                    writer.WriteElementString("Pol", k.Pol.ToString());
-                    writer.WriteElementString("KorisnickoIme", k.Korisnicko_ime);
-                    writer.WriteElementString("Sifra", k.Lozinka);
-                    writer.WriteElementString("JMBG", k.Jmbg);
-                    writer.WriteElementString("KontaktTelefon", k.Kontakt_telefon);
-                    writer.WriteElementString("EMail", k.Email);
-                    writer.WriteElementString("Uloga", k.Uloga.ToString());
-
-                    writer.WriteEndElement();
-                }
-
-
-                writer.WriteEndElement();
-                writer.WriteEndDocument();
-
-                /*
-                foreach (Korisnik k in PostojeciKorisnici.ListaDispecera)
-                {
-                    writer.WriteStartElement("Dispeceri");
-
-
-                    writer.WriteElementString("Ime", k.Ime);
-                    writer.WriteElementString("Prezime", k.Prezime);
-                    writer.WriteElementString("Pol", k.Pol.ToString());
-                    writer.WriteElementString("KorisnickoIme", k.Korisnicko_ime);
-                    writer.WriteElementString("Sifra", k.Lozinka);
-                    writer.WriteElementString("JMBG", k.Jmbg);
-                    writer.WriteElementString("KontaktTelefon", k.Kontakt_telefon);
-                    writer.WriteElementString("EMail", k.Email);
-                    writer.WriteElementString("Uloga", k.Uloga.ToString());
-
-                    writer.WriteEndElement();
-                }
-
-                writer.WriteEndElement();
-                writer.WriteEndDocument();
-            }
-            */
-#endregion
-            return View("Index");
-            }
-
 
         public ActionResult DispecerEdit()
         {
@@ -1128,7 +974,7 @@ namespace WebAPI.Controllers
 
         public ActionResult OtkazujeMusterija(string korisnik, string datum)
         {
-            string[] dat = datum.Split(' ', '-', ':');
+            string[] dat = datum.Split(' ', '-', ':', '/');
 
             int day = int.Parse(dat[0]);
             int month = 0;
@@ -1170,10 +1016,45 @@ namespace WebAPI.Controllers
                 case "Dec":
                     month = 12;
                     break;
+                case "1":
+                    month = 1;
+                    break;
+                case "2":
+                    month = 2;
+                    break;
+                case "3":
+                    month = 3;
+                    break;
+                case "4":
+                    month = 4;
+                    break;
+                case "5":
+                    month = 5;
+                    break;
+                case "6":
+                    month = 6;
+                    break;
+                case "7":
+                    month = 7;
+                    break;
+                case "8":
+                    month = 8;
+                    break;
+                case "9":
+                    month = 9;
+                    break;
+                case "10":
+                    month = 10;
+                    break;
+                case "11":
+                    month = 11;
+                    break;
+                case "12":
+                    month = 12;
+                    break;
             }
 
             int year = int.Parse(dat[2]);
-            year = year + 2000;
             int hour = int.Parse(dat[3]);
             int minute = int.Parse(dat[4]);
             int second = int.Parse(dat[5]);
@@ -1214,7 +1095,7 @@ namespace WebAPI.Controllers
 
         public ActionResult IzmeniVoznjuMusterija(string korisnik, string datum)
         {
-            string[] dat = datum.Split(' ', '-', ':');
+            string[] dat = datum.Split(' ', '-', ':', '/');
 
             int day = int.Parse(dat[0]);
             int month = 0;
@@ -1256,10 +1137,45 @@ namespace WebAPI.Controllers
                 case "Dec":
                     month = 12;
                     break;
+                case "1":
+                    month = 1;
+                    break;
+                case "2":
+                    month = 2;
+                    break;
+                case "3":
+                    month = 3;
+                    break;
+                case "4":
+                    month = 4;
+                    break;
+                case "5":
+                    month = 5;
+                    break;
+                case "6":
+                    month = 6;
+                    break;
+                case "7":
+                    month = 7;
+                    break;
+                case "8":
+                    month = 8;
+                    break;
+                case "9":
+                    month = 9;
+                    break;
+                case "10":
+                    month = 10;
+                    break;
+                case "11":
+                    month = 11;
+                    break;
+                case "12":
+                    month = 12;
+                    break;
             }
 
             int year = int.Parse(dat[2]);
-            year = year + 2000;
             int hour = int.Parse(dat[3]);
             int minute = int.Parse(dat[4]);
             int second = int.Parse(dat[5]);

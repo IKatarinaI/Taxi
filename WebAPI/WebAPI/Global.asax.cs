@@ -11,23 +11,6 @@ using System.Xml;
 using System.Xml.Serialization;
 using WebAPI.Models;
 
-/*
-            Musterija m = new Musterija("d", "d", "dsfj", "djfi", Pol.Muski, "wfeijf", "sfji", "fdjfij", Uloge.Musterija);
-            Vozac v = new Vozac("bole", "1", "df", "df", Pol.Muski, "tr", "df", "df", Uloge.Vozac, "df", "3", "vukovar", "2134");
-            Automobil a = new Automobil(v, "1993", "veio2", "332", TipAutomobila.kombi);
-
-            Adresa ad = new Adresa("sajmiste", "34", "vukovar", "32000");
-            Lokacija l = new Lokacija("43", "43", ad);
-
-            v.Lokacija = l;
-            v.Automobil = a;
-
-            PostojeciKorisnici.ListaKorisnika.Add(m);
-            PostojeciKorisnici.ListaMusterija.Add(m);
-            PostojeciKorisnici.ListaKorisnika.Add(v);
-            PostojeciKorisnici.ListaVozaca.Add(v);
-            */
-
 namespace WebAPI
 {
     public class WebApiApplication : System.Web.HttpApplication
@@ -101,10 +84,45 @@ namespace WebAPI
                 case "Dec":
                     month = 12;
                     break;
+                case "1":
+                    month = 1;
+                    break;
+                case "2":
+                    month = 2;
+                    break;
+                case "3":
+                    month = 3;
+                    break;
+                case "4":
+                    month = 4;
+                    break;
+                case "5":
+                    month = 5;
+                    break;
+                case "6":
+                    month = 6;
+                    break;
+                case "7":
+                    month = 7;
+                    break;
+                case "8":
+                    month = 8;
+                    break;
+                case "9":
+                    month = 9;
+                    break;
+                case "10":
+                    month = 10;
+                    break;
+                case "11":
+                    month = 11;
+                    break;
+                case "12":
+                    month = 12;
+                    break;
             }
 
             int year = int.Parse(dat[2]);
-            year = year + 2000;
             int hour = int.Parse(dat[3]);
             int minute = int.Parse(dat[4]);
             int second = int.Parse(dat[5]);
@@ -314,7 +332,8 @@ namespace WebAPI
             {
                 string line;
                 // Read the file and display it line by line.  
-                System.IO.StreamReader file =
+                
+System.IO.StreamReader file =
                     new System.IO.StreamReader(@"C:\Users\Katarina\Desktop\Taxi\Taxi\WebAPI\WebAPI\dispeceri.txt");
 
                 while ((line = file.ReadLine()) != null)
@@ -405,6 +424,7 @@ namespace WebAPI
                 UcitajVoznje();
             }
         }
+
         private void UcitajVoznje()
         {
             if (File.Exists(@"C:\Users\Katarina\Desktop\Taxi\Taxi\WebAPI\WebAPI\voznje.xml"))
@@ -557,16 +577,18 @@ namespace WebAPI
                             reader.Read();
                             iznos = reader.Value;
 
-                            SacuvajVoznju(datum, pocetna, krajnja, tip, musterijaI, musterijaP, vozacI, vozacP, dispecerI, dispecerP, status, komentar, komentarDatum, ocena, iznos);
+                            //    SacuvajVoznju(datum, pocetna, krajnja, tip, musterijaI, musterijaP, vozacI, vozacP, dispecerI, dispecerP, status, komentar, komentarDatum, ocena, iznos);
+                            SacuvajVoznju(datum, pocetna, krajnja, tip, musterijaI, musterijaP, vozacI, vozacP, dispecerI, dispecerP, status, komentar, ocena, iznos);
+
                         }
                     }
                 }
             }
         }
 
-        private void SacuvajVoznju(string datum, string pocetna, string krajnja, TipAutomobila tip, string musterijaI, string musterijaP, string vozacI, string vozacP, string dispecerI, string dispecerP, StatusVoznje status, string komentar, string komentarDatum, Ocene ocena, string iznos)
+        private void SacuvajVoznju(string datum, string pocetna, string krajnja, TipAutomobila tip, string musterijaI, string musterijaP, string vozacI, string vozacP, string dispecerI, string dispecerP, StatusVoznje status, string komentar, Ocene ocena, string iznos)
         {
-            DateTime date = ToDate("27-Jun-18 14:04:19");
+            DateTime date = ToDate("27-Aug-2018 14:04:19");
             string[] podela = pocetna.Split(',');
             string[] ulica = podela[0].Split('_');
             string[] grad = podela[1].Split('_');
@@ -632,23 +654,26 @@ namespace WebAPI
                 dispecer = new Dispecer("nema", "nema", "nema", "nema", Pol.Muski, "0000", "nema", "nema", Uloge.Dispecer);
             }
             Voznja v = new Voznja();
-            DateTime kom = ToDate(komentarDatum);
+            //DateTime kom = ToDate(komentarDatum);
             Komentar k = new Komentar();
             if (status == StatusVoznje.Otkazana)
             {
-                k = new Komentar(komentar, kom, v, ocena, musterija);
+                //k = new Komentar(komentar, kom, v, ocena, musterija);
+                k = new Komentar(komentar, v, ocena, musterija);
             }
             else if (status == StatusVoznje.Neuspesna)
             {
-                k = new Komentar(komentar, kom, v, ocena, musterija);
+                //k = new Komentar(komentar, kom, v, ocena, musterija);
+                k = new Komentar(komentar, v, ocena, musterija);
             }
             else if (status == StatusVoznje.Uspesna)
             {
-                k = new Komentar(komentar, kom, v, ocena, musterija);
+                //k = new Komentar(komentar, kom, v, ocena, musterija);
+                k = new Komentar(komentar, v, ocena, musterija);
             }
             else
             {
-                k = new Komentar("bez opisa", kom, v, Ocene.neocenjen, new Korisnik("nema", "nema", "nema", "nema", Pol.Muski, "0000", "nema", "nema", Uloge.Dispecer));
+                k = new Komentar("bez opisa", v, Ocene.neocenjen, new Korisnik("nema", "nema", "nema", "nema", Pol.Muski, "0000", "nema", "nema", Uloge.Dispecer));
             }
 
             v = new Voznja(date, poc, tip, musterija, kraj, dispecer, vozac, iznos, k, status);

@@ -22,5 +22,13 @@ namespace WebAPI.Models
             OcenaVoznje = ocenaVoznje;
             Korisnik = k;
         }
+
+        public Komentar(string opis,  Voznja voznja, Ocene ocenaVoznje, Korisnik k)
+        {
+            Opis = opis;
+            Voznja = voznja;
+            OcenaVoznje = ocenaVoznje;
+            Korisnik = k;
+        }
     }
 }

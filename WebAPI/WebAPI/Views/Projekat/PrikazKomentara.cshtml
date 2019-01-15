@@ -5,17 +5,22 @@
 
 <html>
 <head>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script>
-        function goBack()
-        {
+        function goBack() {
             window.history.back();
         }
     </script>
 </head>
-<body style="background-color:limegreen">
-    <div style="text-align:center">
-        <h2>Prikaz detalja vožnje naručene u @Model.Datum_i_vreme</h2>
-        <table border="1">
+<body style="width:auto; height:auto; background-image:url('../taxi-service.png'); background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;">
+    <table class="table"  align="center" style="background-color:aliceblue; border-radius:25px; width:auto; height:auto; padding-left:10px; padding-top:20px">
             <tr>
                 <td>Datum i vreme porudžbine</td>
                 <td>Početna lokacija</td>
@@ -41,7 +46,7 @@
                 <td>@Model.StatusVoznje</td>
             </tr>
         </table>
-    </div>
-    <button onclick="goBack()">Vrati se nazad</button>
+        </div>
+        <button onclick="goBack()">Vrati se nazad</button>
 </body>
 </html>

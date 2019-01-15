@@ -4,16 +4,23 @@
     bool kombi = false;
     bool putnicki = false;
 }
-
-<html>
-<body style="background-color:limegreen">
+<head>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body style="width:auto; height:auto; background-image:url('../taxi-service.png'); background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;">
     <div style="text-align:center">
         <h2><b>Zahtev za vožnju</b></h2>
     </div>
     <br />
     <br />
     <br />
-
     <form action="/Projekat/ZatrazioDispecer">
         <input type="hidden" value="@Model.Korisnicko_ime" name="dispecer" />
         <table>
@@ -47,7 +54,6 @@
                         }
                     </select>
                 </td>
-
             </tr>
             <tr>
                 <td colspan="2">
