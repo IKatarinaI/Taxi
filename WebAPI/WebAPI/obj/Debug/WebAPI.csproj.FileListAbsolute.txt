@@ -187,3 +187,4 @@ C:\Users\Katarina\Desktop\WebAPI\Taxi\WebAPI\WebAPI\obj\Debug\WebAPI.csproj.Core
 C:\Users\Katarina\Desktop\WebAPI\Taxi\WebAPI\WebAPI\obj\Debug\WebAPI.csproj.CopyComplete
 C:\Users\Katarina\Desktop\WebAPI\Taxi\WebAPI\WebAPI\obj\Debug\WebAPI.dll
 C:\Users\Katarina\Desktop\WebAPI\Taxi\WebAPI\WebAPI\obj\Debug\WebAPI.pdb
+C:\Users\Katarina\Desktop\WebAPI\Taxi\WebAPI\WebAPI\obj\Debug\WebAPI.csprojAssemblyReference.cache

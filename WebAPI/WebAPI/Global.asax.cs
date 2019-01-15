@@ -136,7 +136,7 @@ namespace WebAPI
         private void Ucitavanje()
         {
 
-            if (File.Exists(@"C:\Users\Katarina\Desktop\Taxi\Taxi\WebAPI\WebAPI\korisnici.xml"))
+            if (File.Exists(@"C: \Users\Katarina\Desktop\WebAPI\Taxi\WebAPI\WebAPI\korisnici.xml"))
             {
                 string ime = "";
                 string prezime = "";
@@ -158,7 +158,7 @@ namespace WebAPI
                 TipAutomobila tip = TipAutomobila.kombi;
                 string taxiBr = "";
 
-                using (XmlReader reader = XmlReader.Create(@"C:\Users\Katarina\Desktop\Taxi\Taxi\WebAPI\WebAPI\korisnici.xml"))
+                using (XmlReader reader = XmlReader.Create(@"C:\Users\Katarina\Desktop\WebAPI\Taxi\WebAPI\WebAPI\korisnici.xml"))
                 {
                     while (reader.Read())
                     {
@@ -334,7 +334,7 @@ namespace WebAPI
                 // Read the file and display it line by line.  
                 
 System.IO.StreamReader file =
-                    new System.IO.StreamReader(@"C:\Users\Katarina\Desktop\Taxi\Taxi\WebAPI\WebAPI\dispeceri.txt");
+                    new System.IO.StreamReader(@"C:\Users\Katarina\Desktop\WebAPI\Taxi\WebAPI\WebAPI\dispeceri.txt");
 
                 while ((line = file.ReadLine()) != null)
                 {
@@ -361,7 +361,9 @@ System.IO.StreamReader file =
 
                 file.Close();
 
-                string path = @"C:\Users\Katarina\Desktop\Taxi\Taxi\WebAPI\WebAPI\korisnici.xml";
+                //string path = @"..\WebAPI\WebAPI\korisnici.xml";
+
+                string path = @"C:\Users\Katarina\Desktop\WebAPI\Taxi\WebAPI\WebAPI\korisnici.xml";
                 XmlWriter writer = null;
                 try
                 {
@@ -427,7 +429,7 @@ System.IO.StreamReader file =
 
         private void UcitajVoznje()
         {
-            if (File.Exists(@"C:\Users\Katarina\Desktop\Taxi\Taxi\WebAPI\WebAPI\voznje.xml"))
+            if (File.Exists(@"C:\Users\Katarina\Desktop\WebAPI\Taxi\WebAPI\WebAPI\voznje.xml"))
             {
                 string datum = "";
                 string pocetna = "";
@@ -445,7 +447,7 @@ System.IO.StreamReader file =
                 Ocene ocena = Ocene.neocenjen;
                 string iznos = "0";
 
-                using (XmlReader reader = XmlReader.Create(@"C:\Users\Katarina\Desktop\Taxi\Taxi\WebAPI\WebAPI\voznje.xml"))
+                using (XmlReader reader = XmlReader.Create(@"C:\Users\Katarina\Desktop\WebAPI\Taxi\WebAPI\WebAPI\voznje.xml"))
                 {
                     while (reader.Read())
                     {

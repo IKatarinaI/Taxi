@@ -20,15 +20,8 @@
         <h2>Dobrodošli @Model.Korisnicko_ime</h2>
     </div>
     <div style="text-align:center">
-        <h2>Dobrodošli @Model.Korisnicko_ime</h2>
-    </div>
-    <div style="text-align:center">
         <table align="center">
             <tr>
-                <td width="50">
-                    <form action="/Projekat/DodajVozacaStart">
-                        <input type="submit" value="Dodaj vozaca" />
-                    </form>
                 <td width="50">
                     <form action="/Projekat/MusterijaEdit">
                         <input type="submit" value="Izmeni podatke" />
@@ -154,15 +147,7 @@ else if (Model.Filter == true)
                                 </form>
                             </td>
                         }
-                        <td rowspan="2">
-                            <form action="/Projekat/PrikaziKomentar">
-                                <input type="submit" value="Prikaži vožnju" />
-                                <input type="hidden" name="datum" value="@v.Datum_i_vreme" />
-                                <input type="hidden" name="korisnik" value="@v.Musterija.Korisnicko_ime" />
-                                <input type="hidden" name="vozac" value="@v.Vozac.Korisnicko_ime" />
-                                <input type="hidden" name="dispecer" value="@v.Dispecer.Korisnicko_ime" />
-                            </form>
-                        </td>
+                        
                     </tr>
                 }
         </table>
@@ -242,15 +227,7 @@ else if (Model.Pretrazivanje == true)
                             </form>
                         </td>
                     }
-                    <td rowspan="2">
-                        <form action="/Projekat/PrikaziKomentar">
-                            <input type="submit" value="Prikaži vožnju" />
-                            <input type="hidden" name="datum" value="@v.Datum_i_vreme" />
-                            <input type="hidden" name="korisnik" value="@v.Musterija.Korisnicko_ime" />
-                            <input type="hidden" name="vozac" value="@v.Vozac.Korisnicko_ime" />
-                            <input type="hidden" name="dispecer" value="@v.Dispecer.Korisnicko_ime" />
-                        </form>
-                    </td>
+                   
                 </tr>
             }
         </table>
@@ -339,15 +316,7 @@ else if (Model.Sortiranje == true)
                             </form>
                         </td>
                     }
-                    <td rowspan="2">
-                        <form action="/Projekat/PrikaziKomentar">
-                            <input type="submit" value="Prikaži vožnju" />
-                            <input type="hidden" name="datum" value="@v.Datum_i_vreme" />
-                            <input type="hidden" name="korisnik" value="@v.Musterija.Korisnicko_ime" />
-                            <input type="hidden" name="vozac" value="@v.Vozac.Korisnicko_ime" />
-                            <input type="hidden" name="dispecer" value="@v.Dispecer.Korisnicko_ime" />
-                        </form>
-                    </td>
+                    
                 </tr>
             }
         </table>
@@ -450,15 +419,7 @@ else
                             </form>
                         </td>
                     }
-                    <td>
-                        <form action="/Projekat/PrikaziKomentar">
-                            <input type="submit" value="Prikaži vožnju" />
-                            <input type="hidden" name="datum" value="@v.Datum_i_vreme" />
-                            <input type="hidden" name="korisnik" value="@v.Musterija.Korisnicko_ime" />
-                            <input type="hidden" name="vozac" value="@v.Vozac.Korisnicko_ime" />
-                            <input type="hidden" name="dispecer" value="@v.Dispecer.Korisnicko_ime" />
-                        </form>
-                    </td>
+                   
                 </tr>
             }
         </table>

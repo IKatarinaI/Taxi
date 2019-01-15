@@ -977,7 +977,7 @@ namespace WebAPI.Controllers
             string[] dat = datum.Split(' ', '-', ':', '/');
 
             int day = int.Parse(dat[0]);
-            int month = 0;
+            int month = 1;
             switch (dat[1])
             {
                 case "Jan":
@@ -1098,7 +1098,7 @@ namespace WebAPI.Controllers
             string[] dat = datum.Split(' ', '-', ':', '/');
 
             int day = int.Parse(dat[0]);
-            int month = 0;
+            int month = 1;
             switch (dat[1])
             {
                 case "Jan":
@@ -1541,7 +1541,7 @@ namespace WebAPI.Controllers
 
         private void SacuvajVoznje(List<Voznja> sveVoznje)
         {
-            string filename = @"C:\Users\Katarina\Desktop\Taxi\Taxi\WebAPI\WebAPI\voznje.xml";
+            string filename = @"C:\Users\Katarina\Desktop\WebAPI\Taxi\WebAPI\WebAPI\voznje.xml";
             XmlWriter writer = null;
             try
             {
@@ -1617,7 +1617,7 @@ namespace WebAPI.Controllers
 
         private void SacuvajLjude(List<Korisnik> korisnici)
         {
-            string filename = @"C:\Users\Katarina\Desktop\Taxi\Taxi\WebAPI\WebAPI\korisnici.xml";
+            string filename = @"C:\Users\Katarina\Desktop\WebAPI\Taxi\WebAPI\WebAPI\korisnici.xml";
             XmlWriter writer = null;
             try
             {

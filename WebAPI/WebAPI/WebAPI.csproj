@@ -290,7 +290,7 @@
     <Content Include="Views\Projekat\vozacView.cshtml" />
     <Content Include="Views\Projekat\EditVozac.cshtml" />
     <Content Include="Views\Projekat\UspesnoOtkazanaVoznja.cshtml" />
-    <Content Include="Views\IzmenaVoznjeMusterija.cshtml" />
+    <Content Include="Views\Projekat\IzmenaVoznjeMusterija.cshtml" />
     <Content Include="Views\Projekat\PrikazKomentara.cshtml" />
     <Content Include="Views\Projekat\DodeljivanjeVozaca.cshtml" />
     <Content Include="Views\Projekat\UspesnoDodatVozac.cshtml" />

@@ -17,66 +17,67 @@
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
-    <body style="width:auto; height:auto; background-image:url('../taxi-service.png'); background-size: cover;
+<body style="width:auto; height:auto; background-image:url('../taxi-service.png'); background-size: cover;
     background-repeat: no-repeat;
     background-position: 50% 50%;">
-        <div style="text-align:center">
-            <form action="/Projekat/IzmeniPodatkeVozac">
-                <table>
-                    <tr>
-                        <td colspan="2">Popunite sledeća polja</td>
-                    </tr>
-                    <tr>
-                        <td>Ime:</td>
-                        <td><input type="text" name="ime" value="@Model.Ime" /></td>
-                    </tr>
-                    <tr>
-                        <td>Prezime:</td>
-                        <td><input type="text" name="prezime" value="@Model.Prezime" /></td>
-                    </tr>
-                    <tr>
-                        <td>Pol:</td>
-                        <td>
-                            <select name="pol">
-                                @if (Model.Pol == WebAPI.Models.Pol.Muski)
-                                {
-                                    <option value="muski" selected="selected">Muski</option>
-                                    <option value="zenski">Zenski</option>
-                                }
-                                else
-                                {
-                                    <option value="zenski" selected="selected">Zenski</option>
-                                    <option value="muski">Muski</option>
-                                }
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Jmbg:</td>
-                        <td><input type="text" name="jmbg" value="@Model.Jmbg" /></td>
-                    </tr>
-                    <tr>
-                        <td>Korisnicko ime:</td>
-                        <td><input type="text" readonly="readonly" name="korisnicko" value="@Model.Korisnicko_ime" /></td>
-                    </tr>
-                    <tr>
-                        <td>Lozinka:</td>
-                        <td><input type="text" name="lozinka" value="@Model.Lozinka" /></td>
-                    </tr>
-                    <tr>
-                        <td>E-mail:</td>
-                        <td><input type="text" name="mail" value="@Model.Email" /></td>
-                    </tr>
-                    <tr>
-                        <td>Broj telefona:</td>
-                        <td><input type="text" name="broj" value="@Model.Kontakt_telefon" /></td>
-                    </tr>
-                    <tr>
-                        <td align="center"><input type="submit" value="Sačuvaj" /></td>
-                    </tr>
-                </table>
-            </form>
-            <button onclick="goBack()">Vrati se na profil</button>
-        </div>
-    </body>
+    <div style="text-align:center">
+
+        <form action="/Projekat/IzmeniPodatkeVozac">
+            <table>
+                <tr>
+                    <td colspan="2">Popunite sledeća polja</td>
+                </tr>
+                <tr>
+                    <td>Ime:</td>
+                    <td><input type="text" name="ime" value="@Model.Ime" /></td>
+                </tr>
+                <tr>
+                    <td>Prezime:</td>
+                    <td><input type="text" name="prezime" value="@Model.Prezime" /></td>
+                </tr>
+                <tr>
+                    <td>Pol:</td>
+                    <td>
+                        <select name="pol">
+                            @if (Model.Pol == WebAPI.Models.Pol.Muski)
+                            {
+                                <option value="muski" selected="selected">Muski</option>
+                                <option value="zenski">Zenski</option>
+                            }
+                            else
+                            {
+                                <option value="zenski" selected="selected">Zenski</option>
+                                <option value="muski">Muski</option>
+                            }
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Jmbg:</td>
+                    <td><input type="text" name="jmbg" value="@Model.Jmbg" /></td>
+                </tr>
+                <tr>
+                    <td>Korisnicko ime:</td>
+                    <td><input type="text" readonly="readonly" name="korisnicko" value="@Model.Korisnicko_ime" /></td>
+                </tr>
+                <tr>
+                    <td>Lozinka:</td>
+                    <td><input type="text" name="lozinka" value="@Model.Lozinka" /></td>
+                </tr>
+                <tr>
+                    <td>E-mail:</td>
+                    <td><input type="text" name="mail" value="@Model.Email" /></td>
+                </tr>
+                <tr>
+                    <td>Broj telefona:</td>
+                    <td><input type="text" name="broj" value="@Model.Kontakt_telefon" /></td>
+                </tr>
+                <tr>
+                    <td align="center"><input type="submit" value="Sačuvaj" /></td>
+                </tr>
+            </table>
+        </form>
+        <button onclick="goBack()">Vrati se na profil</button>
+    </div>
+</body>
 </html>

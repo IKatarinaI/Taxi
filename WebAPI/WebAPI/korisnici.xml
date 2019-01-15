@@ -5,7 +5,7 @@
 		<Jmbg>31090913934309</Jmbg>
 		<KorisnickoIme>admin</KorisnickoIme>
 		<Lozinka>admin</Lozinka>
-		<Pol>Muski</Pol>
+		<Pol>Zenski</Pol>
 		<E-Mail>admin@admin.com</E-Mail>
 		<BrojTelefona>065343938</BrojTelefona>
 		<Uloga>Dispecer</Uloga>
@@ -22,46 +22,24 @@
 		<Uloga>Dispecer</Uloga>
 	</Korisnik>
 	<Korisnik>
-		<Ime>Ivana</Ime>
-		<Prezime>Markanovic</Prezime>
-		<Jmbg>389328233</Jmbg>
-		<KorisnickoIme>mivana</KorisnickoIme>
-		<Lozinka>mivana</Lozinka>
-		<Pol>Zenski</Pol>
-		<E-Mail>mivana@mivana.com</E-Mail>
-		<BrojTelefona>064323929</BrojTelefona>
-		<Uloga>Musterija</Uloga>
-	</Korisnik>
-	<Korisnik>
-		<Ime>Simona</Ime>
-		<Prezime>Maric</Prezime>
-		<Jmbg>3049094309f</Jmbg>
-		<KorisnickoIme>simona</KorisnickoIme>
-		<Lozinka>Simona</Lozinka>
-		<Pol>Zenski</Pol>
-		<E-Mail>simona@simona.com</E-Mail>
-		<BrojTelefona>06423423</BrojTelefona>
-		<Uloga>Musterija</Uloga>
-	</Korisnik>
-	<Korisnik>
 		<Ime>Milena</Ime>
 		<Prezime>Kartal</Prezime>
-		<Jmbg>34893478</Jmbg>
+		<Jmbg>0402995805090</Jmbg>
 		<KorisnickoIme>milena</KorisnickoIme>
 		<Lozinka>milena</Lozinka>
-		<Pol>Zenski</Pol>
+		<Pol>Muski</Pol>
 		<E-Mail>milena@milena.com</E-Mail>
-		<BrojTelefona>06445983</BrojTelefona>
+		<BrojTelefona>0694219940</BrojTelefona>
 		<Uloga>Vozac</Uloga>
 		<Automobil>
-			<Godiste>2000</Godiste>
-			<Registracija>ns-383-ej</Registracija>
-			<TaxiBroj>1</TaxiBroj>
-			<TipVozila>putnicki</TipVozila>
+			<Godiste>2015</Godiste>
+			<Registracija>ns-65</Registracija>
+			<TaxiBroj>541</TaxiBroj>
+			<TipVozila>kombi</TipVozila>
 		</Automobil>
 		<Adresa>
-			<NazivUlice>Vojvodjanska</NazivUlice>
-			<BrojUlice>32</BrojUlice>
+			<NazivUlice>Drage Spasic</NazivUlice>
+			<BrojUlice>7</BrojUlice>
 			<Grad>Novi Sad</Grad>
 			<PostanskiBroj>21000</PostanskiBroj>
 			<X>2</X>
@@ -69,39 +47,39 @@
 		</Adresa>
 	</Korisnik>
 	<Korisnik>
-		<Ime>Tanja</Ime>
-		<Prezime>Jovanovic</Prezime>
-		<Jmbg>3094383</Jmbg>
-		<KorisnickoIme>tanja</KorisnickoIme>
-		<Lozinka>tanja</Lozinka>
-		<Pol>Zenski</Pol>
-		<E-Mail>tanja@tanja.com</E-Mail>
-		<BrojTelefona>06434932</BrojTelefona>
-		<Uloga>Musterija</Uloga>
-	</Korisnik>
-	<Korisnik>
 		<Ime>Bojan</Ime>
 		<Prezime>Batalo</Prezime>
-		<Jmbg>1302952819993</Jmbg>
+		<Jmbg>0402995805090</Jmbg>
 		<KorisnickoIme>bojan</KorisnickoIme>
 		<Lozinka>bojan</Lozinka>
 		<Pol>Muski</Pol>
 		<E-Mail>bojan@bojan.com</E-Mail>
-		<BrojTelefona>06618273</BrojTelefona>
+		<BrojTelefona>0694219940</BrojTelefona>
 		<Uloga>Vozac</Uloga>
 		<Automobil>
-			<Godiste>2012</Godiste>
-			<Registracija>362899</Registracija>
-			<TaxiBroj>23</TaxiBroj>
+			<Godiste>2004</Godiste>
+			<Registracija>ns-945</Registracija>
+			<TaxiBroj>4541</TaxiBroj>
 			<TipVozila>kombi</TipVozila>
 		</Automobil>
 		<Adresa>
-			<NazivUlice>street</NazivUlice>
-			<BrojUlice>32</BrojUlice>
-			<Grad>citiy</Grad>
-			<PostanskiBroj>34</PostanskiBroj>
-			<X>34</X>
-			<Y>343</Y>
+			<NazivUlice>Drage Spasic</NazivUlice>
+			<BrojUlice>7</BrojUlice>
+			<Grad>Novi Sad</Grad>
+			<PostanskiBroj>21000</PostanskiBroj>
+			<X>45</X>
+			<Y>45</Y>
 		</Adresa>
+	</Korisnik>
+	<Korisnik>
+		<Ime>Katarina</Ime>
+		<Prezime>Ivosevic</Prezime>
+		<Jmbg>0402995805090</Jmbg>
+		<KorisnickoIme>kata</KorisnickoIme>
+		<Lozinka>kata</Lozinka>
+		<Pol>Zenski</Pol>
+		<E-Mail>katarina@katarina.com</E-Mail>
+		<BrojTelefona>0694219940</BrojTelefona>
+		<Uloga>Musterija</Uloga>
 	</Korisnik>
 </Ulogovani>
