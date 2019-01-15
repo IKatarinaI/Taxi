@@ -28,16 +28,16 @@
                     <tr></tr>
                     <tr>
                         <td>Ime:</td>
-                        <td><input type="text" name="ime" /></td>
+                        <td><input type="text" name="ime" required /></td>
                     </tr>
                     <tr>
                         <td>Prezime:</td>
-                        <td><input type="text" name="prezime" /></td>
+                        <td><input type="text" name="prezime" required/></td>
                     </tr>
                     <tr>
                         <td>Pol:</td>
                         <td>
-                            <select name="pol">
+                            <select name="pol" required>
                                 <option value="muski">Muski</option>
                                 <option value="zenski">Zenski</option>
                             </select>
@@ -45,45 +45,45 @@
                     </tr>
                     <tr>
                         <td>Korisnicko ime:</td>
-                        <td><input type="text" name="korisnicko_ime" /></td>
+                        <td><input type="text" name="korisnicko_ime" required/></td>
                     </tr>
                     <tr>
                         <td>Jmbg:</td>
-                        <td><input type="text" name="jmbg" /></td>
+                        <td><input type="text" name="jmbg" required/></td>
                     </tr>
 
                     <tr>
                         <td>Lozinka:</td>
-                        <td><input type="text" name="lozinka" /></td>
+                        <td><input type="text" name="lozinka" required /></td>
                     </tr>
                     <tr>
                         <td>E-mail:</td>
-                        <td><input type="text" name="email" /></td>
+                        <td><input type="text" name="email" required/></td>
                     </tr>
                     <tr>
                         <td>Broj telefona:</td>
-                        <td><input type="text" name="kontakt_broj" /></td>
+                        <td><input type="text" name="kontakt_broj" required/></td>
                     </tr>
                     <tr>
                         <td>Ulica:</td>
-                        <td><input type="text" name="ulica" /></td>
+                        <td><input type="text" name="ulica" required/></td>
                     </tr>
                     <tr>
                         <td>Broj:</td>
-                        <td><input type="text" name="broj" /></td>
+                        <td><input type="text" name="broj" required min="1"/></td>
                     </tr>
                     <tr>
                         <td>Mesto:</td>
-                        <td><input type="text" name="mesto" /></td>
+                        <td><input type="text" name="mesto" required/></td>
                     </tr>
                     <tr>
                         <td>Pozivni broj:</td>
-                        <td><input type="text" name="postanski_broj" /></td>
+                        <td><input type="text" name="postanski_broj" required min="10000"/></td>
                     </tr>
                     <tr>
                         <td>Godište automobila:</td>
                         <td>
-                            <input type="text" name="godiste" />
+                            <input type="text" name="godiste" required min="1800"/>
                         </td>
                     </tr>
                     <tr>
@@ -91,19 +91,19 @@
                             Registraciona oznaka:
                         </td>
                         <td>
-                            <input type="text" name="reg" />
+                            <input type="text" name="reg" required/>
                         </td>
                     </tr>
                     <tr>
                         <td>Taxi broj vozila:</td>
                         <td>
-                            <input type="text" name="taxiBroj" />
+                            <input type="text" name="taxiBroj" required/>
                         </td>
                     </tr>
                     <tr>
                         <td>Tip vozila:</td>
                         <td>
-                            <select name="tip">
+                            <select name="tip" required>
                                 <option value="kombi">Kombi</option>
                                 <option value="putnicki">Putnicki</option>
                             </select>

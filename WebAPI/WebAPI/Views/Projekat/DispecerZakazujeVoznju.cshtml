@@ -26,10 +26,10 @@
         <table>
             <tr>
                 <td><b>Unesite lokaciju(ulica,broj,mesto,postanški broj)</b></td>
-                <td><input type="text" name="ulica" /></td>
-                <td><input type="text" name="broj" /></td>
-                <td><input type="text" name="mesto" /></td>
-                <td><input type="text" name="postanski" /></td>
+                <td><input type="text" name="ulica" required /></td>
+                <td><input type="text" name="broj" required min="1"/></td>
+                <td><input type="text" name="mesto" required/></td>
+                <td><input type="text" name="postanski" required min="10000"/></td>
             </tr>
             <tr>
                 <td>
@@ -38,7 +38,7 @@
                     </b>
                 </td>
                 <td>
-                    <select name="vozilo">
+                    <select name="vozilo" required>
                         <option value="putnicko">Putničko</option>
                         <option value="kombi">Kombi</option>
                     </select>
@@ -47,7 +47,7 @@
             <tr>
                 <td>Slobodni vozači</td>
                 <td>
-                    <select name="korisnickoVozac">
+                    <select name="korisnickoVozac" required>
                         @foreach (WebAPI.Models.Vozac v in WebAPI.Models.PostojeciKorisnici.ListaVozaca)
                         {
                             <option value="@v.Korisnicko_ime">@v.Ime @v.Automobil.Tip.ToString()</option>

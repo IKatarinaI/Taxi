@@ -14,32 +14,33 @@
 		<KomentarOpis>bez opisa</KomentarOpis>
 		<KomentarDatum>1/1/0001 00:00:00</KomentarDatum>
 		<KomentarOcena>neocenjen</KomentarOcena>
-		<Iznos>Novi Sad_7,Novi Sad_21000</Iznos>
+		<Iznos>Beograd_8,Beograd_21000</Iznos>
 	</Voznja>
 	<Voznja>
 		<DatumPorudzbine>8/27/2018 14:04:19</DatumPorudzbine>
-		<LokacijaNaKojuTaksiDolazi>Beograd_8,Beograd_21000</LokacijaNaKojuTaksiDolazi>
+		<LokacijaNaKojuTaksiDolazi>Novi Sad_7,Novi Sad_21000</LokacijaNaKojuTaksiDolazi>
 		<KrajnjaLokacija>Nepoznato_0,Nepoznato_0</KrajnjaLokacija>
 		<TipVozila>kombi</TipVozila>
-		<MusterijaIme />
-		<MusterijaPrezime />
-		<VozacIme />
-		<VozacPrezime />
-		<DispecerIme />
-		<DispececrPrezime />
+		<MusterijaIme>Katarina</MusterijaIme>
+		<MusterijaPrezime>Ivosevic</MusterijaPrezime>
+		<VozacIme>nema</VozacIme>
+		<VozacPrezime>nema</VozacPrezime>
+		<DispecerIme>nema</DispecerIme>
+		<DispececrPrezime>nema</DispececrPrezime>
 		<Status>Formirana</Status>
 		<KomentarOpis>bez opisa</KomentarOpis>
 		<KomentarDatum>1/1/0001 00:00:00</KomentarDatum>
 		<KomentarOcena>neocenjen</KomentarOcena>
-		<Iznos />
+		<Iznos>
+	</Iznos>
 	</Voznja>
 	<Voznja>
-		<DatumPorudzbine>1/15/2019 17:20:05</DatumPorudzbine>
-		<LokacijaNaKojuTaksiDolazi>Novi Sad_7,Novi Sad_21000</LokacijaNaKojuTaksiDolazi>
+		<DatumPorudzbine>1/15/2019 19:01:28</DatumPorudzbine>
+		<LokacijaNaKojuTaksiDolazi>Novi Sad_4,Novi Sad_21000</LokacijaNaKojuTaksiDolazi>
 		<KrajnjaLokacija>Nepoznato_0,Nepoznato_0</KrajnjaLokacija>
 		<TipVozila>putnickiAutomobil</TipVozila>
-		<MusterijaIme>Katarina</MusterijaIme>
-		<MusterijaPrezime>Ivosevic</MusterijaPrezime>
+		<MusterijaIme>Ivana</MusterijaIme>
+		<MusterijaPrezime>Markanovic</MusterijaPrezime>
 		<VozacIme>nema</VozacIme>
 		<VozacPrezime>nema</VozacPrezime>
 		<DispecerIme>nema</DispecerIme>

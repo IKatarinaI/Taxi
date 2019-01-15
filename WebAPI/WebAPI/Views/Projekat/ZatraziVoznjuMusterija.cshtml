@@ -28,10 +28,10 @@
             <table align="center">
                 <tr>
                     <td><b>Vaša lokacija(ulica,broj,mesto,postanški broj)</b></td>
-                    <td><input type="text" name="ulica" /></td>
-                    <td><input type="text" name="broj" /></td>
-                    <td><input type="text" name="mesto" /></td>
-                    <td><input type="text" name="postanski_broj" /></td>
+                    <td><input type="text" name="ulica" required /></td>
+                    <td><input type="text" name="broj" required min="1"/></td>
+                    <td><input type="text" name="mesto" required/></td>
+                    <td><input type="text" name="postanski_broj" required min="10000"/></td>
                 </tr>
                 <tr>
                     <td>
@@ -40,7 +40,7 @@
                         </b>
                     </td>
                     <td>
-                        <select name="tip_vozila">
+                        <select name="tip_vozila" required>
                             <option value="putnicko">Putničko</option>
                             <option value="kombi">Kombi</option>
                         </select>
@@ -52,8 +52,8 @@
                             Odaberite koordinate x i y:
                         </b>
                     </td>
-                    <td><input type="text" name="x" /></td>
-                    <td><input type="text" name="y" /></td>
+                    <td><input type="text" name="x" required/></td>
+                    <td><input type="text" name="y" required/></td>
                 </tr>
                 <tr>
                     <td colspan="2">

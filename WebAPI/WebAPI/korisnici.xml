@@ -27,7 +27,7 @@
 		<Jmbg>0402995805090</Jmbg>
 		<KorisnickoIme>milena</KorisnickoIme>
 		<Lozinka>milena</Lozinka>
-		<Pol>Muski</Pol>
+		<Pol>Zenski</Pol>
 		<E-Mail>milena@milena.com</E-Mail>
 		<BrojTelefona>0694219940</BrojTelefona>
 		<Uloga>Vozac</Uloga>
@@ -38,12 +38,12 @@
 			<TipVozila>kombi</TipVozila>
 		</Automobil>
 		<Adresa>
-			<NazivUlice>Drage Spasic</NazivUlice>
-			<BrojUlice>7</BrojUlice>
+			<NazivUlice>Futoska</NazivUlice>
+			<BrojUlice>1</BrojUlice>
 			<Grad>Novi Sad</Grad>
-			<PostanskiBroj>21000</PostanskiBroj>
-			<X>2</X>
-			<Y>2</Y>
+			<PostanskiBroj>12</PostanskiBroj>
+			<X>1</X>
+			<Y>1</Y>
 		</Adresa>
 	</Korisnik>
 	<Korisnik>
@@ -79,6 +79,17 @@
 		<Lozinka>kata</Lozinka>
 		<Pol>Zenski</Pol>
 		<E-Mail>katarina@katarina.com</E-Mail>
+		<BrojTelefona>0694219940</BrojTelefona>
+		<Uloga>Musterija</Uloga>
+	</Korisnik>
+	<Korisnik>
+		<Ime>Ivana</Ime>
+		<Prezime>Markanovic</Prezime>
+		<Jmbg>0402995805090</Jmbg>
+		<KorisnickoIme>mivana</KorisnickoIme>
+		<Lozinka>mivana</Lozinka>
+		<Pol>Zenski</Pol>
+		<E-Mail>mivana@mivana</E-Mail>
 		<BrojTelefona>0694219940</BrojTelefona>
 		<Uloga>Musterija</Uloga>
 	</Korisnik>
